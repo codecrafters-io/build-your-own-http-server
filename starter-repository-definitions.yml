@@ -1,0 +1,63 @@
+- language: python
+  file_mappings:
+    - source: starter_templates/README.md
+      target: README.md
+    - source: starter_templates/codecrafters.yml
+      target: codecrafters.yml
+    - source: starter_templates/python/app/main.py
+      target: app/main.py
+    - source: starter_templates/python/Pipfile
+      target: Pipfile
+    - source: starter_templates/python/Pipfile.lock
+      target: Pipfile.lock
+    - source: starter_templates/python/.gitignore
+      target: .gitignore
+    - source: starter_templates/python/your_server.sh
+      target: your_server.sh
+    - source: starter_templates/.gitattributes
+      target: .gitattributes
+  template_attributes:
+    required_executable: "python (3.11)"
+    user_editable_file: "app/main.py"
+
+- language: rust
+  file_mappings:
+    - source: starter_templates/README.md
+      target: README.md
+    - source: starter_templates/codecrafters.yml
+      target: codecrafters.yml
+    - source: starter_templates/rust/src/main.rs
+      target: src/main.rs
+    - source: starter_templates/rust/.gitignore
+      target: .gitignore
+    - source: starter_templates/rust/Cargo.toml
+      target: Cargo.toml
+    - source: starter_templates/rust/Cargo.lock
+      target: Cargo.lock
+    - source: starter_templates/rust/your_server.sh
+      target: your_server.sh
+    - source: starter_templates/.gitattributes
+      target: .gitattributes
+  template_attributes:
+    required_executable: "cargo (1.70)"
+    user_editable_file: "src/main.rs"
+
+- language: go
+  file_mappings:
+    - source: starter_templates/README.md
+      target: README.md
+    - source: starter_templates/codecrafters.yml
+      target: codecrafters.yml
+    - source: starter_templates/go/your_server.sh
+      target: your_server.sh
+    - source: starter_templates/go/go.mod
+      target: go.mod
+    - source: starter_templates/go/go.sum
+      target: go.sum
+    - source: starter_templates/go/app/server.go
+      target: app/server.go
+    - source: starter_templates/.gitattributes
+      target: .gitattributes
+  template_attributes:
+    required_executable: "go (1.19)"
+    user_editable_file: "app/server.go"

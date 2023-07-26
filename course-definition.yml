@@ -1,0 +1,61 @@
+slug: "http-server"
+name: "Build your own HTTP server"
+short_name: "HTTP Server"
+release_status: "alpha"
+
+description_md: |
+  TODO: Add description
+
+# Keep this under 70 characters
+short_description_md: |
+  TODO: Add short description
+
+completion_percentage: 10 # We'll update this once we have testers go through the course
+
+languages:
+  - slug: "go"
+    starter_repository_url: "https://github.com/codecrafters-io/http-server-starter-go"
+
+  - slug: "python"
+    starter_repository_url: "https://github.com/codecrafters-io/http-server-starter-python"
+
+  - slug: "rust"
+    starter_repository_url: "https://github.com/codecrafters-io/http-server-starter-rust"
+
+marketing:
+  difficulty: medium
+  sample_extension_idea_title: "Pipelining"
+  sample_extension_idea_description: "A HTTP server that supports HTTP/1.1 pipelining"
+  testimonials:
+    - author_name: "Ananthalakshmi Sankar"
+      author_description: "Automation Engineer at Apple"
+      author_avatar: "https://codecrafters.io/images/external/testimonials/oxta.jpeg"
+      link: "https://github.com/anu294"
+      text: "There are few sites I like as much that have a step by step guide. The real-time feedback is so good, it's creepy!"
+
+    - author_name: "Patrick Burris"
+      author_description: "Senior Software Developer, CenturyLink"
+      author_avatar: "https://codecrafters.io/images/external/testimonials/patrick-burris.jpeg"
+      link: "https://github.com/Jumballaya"
+      text: |
+        I think the instant feedback right there in the git push is really cool.
+        Didn't even know that was possible!
+
+stages:
+  - slug: "init"
+    name: "Respond with 200"
+    difficulty: very_easy
+    description_md: |
+      TODO: Add description
+    marketing_md: |
+      TODO: Add marketing description
+
+  # - slug: "respond_with_404"
+  #   name: "Respond with 404"
+  #   difficulty: very_easy
+  #   description_md: |
+  #     TODO: Add description
+  #   marketing_md: |
+  #     TODO: Add marketing description
+  
+  # ... add the others
