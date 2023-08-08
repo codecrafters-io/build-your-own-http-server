@@ -14,13 +14,8 @@ completion_percentage: 10 # We'll update this once we have testers go through th
 
 languages:
   - slug: "go"
-    starter_repository_url: "https://github.com/codecrafters-io/http-server-starter-go"
-
   - slug: "python"
-    starter_repository_url: "https://github.com/codecrafters-io/http-server-starter-python"
-
   - slug: "rust"
-    starter_repository_url: "https://github.com/codecrafters-io/http-server-starter-rust"
 
 marketing:
   difficulty: medium
