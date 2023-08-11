@@ -47,7 +47,7 @@ stages:
 
   - slug: "respond_with_404"
     name: "Respond with 404"
-    difficulty: very_easy
+    difficulty: somewhat_hard
     description_md: |
       TODO: Add description
     marketing_md: |
