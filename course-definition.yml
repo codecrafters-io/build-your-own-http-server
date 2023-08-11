@@ -45,12 +45,12 @@ stages:
     marketing_md: |
       TODO: Add marketing description
 
-  # - slug: "respond_with_404"
-  #   name: "Respond with 404"
-  #   difficulty: very_easy
-  #   description_md: |
-  #     TODO: Add description
-  #   marketing_md: |
-  #     TODO: Add marketing description
+  - slug: "respond_with_404"
+    name: "Respond with 404"
+    difficulty: very_easy
+    description_md: |
+      TODO: Add description
+    marketing_md: |
+      TODO: Add marketing description
   
   # ... add the others
