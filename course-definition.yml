@@ -49,7 +49,7 @@ stages:
     name: "Respond with 404"
     difficulty: somewhat_hard
     description_md: |
-      TODO: Add description
+      This is an updpated description for the stage
     marketing_md: |
       TODO: Add marketing description
   
