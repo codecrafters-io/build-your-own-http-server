@@ -13,9 +13,9 @@ short_description_md: |
 completion_percentage: 10 # We'll update this once we have testers go through the course
 
 languages:
-  - slug: "go"
-  - slug: "python"
-  - slug: "rust"
+slug: "go"
+slug: "python"
+slug: "rust"
 
 marketing:
   difficulty: medium
