@@ -14,7 +14,6 @@ completion_percentage: 10 # We'll update this once we have testers go through th
 
 languages:
   - slug: "go"
-      test: "will this return an error"
   - slug: "python"
   - slug: "rust"
 
