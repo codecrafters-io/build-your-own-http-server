@@ -37,20 +37,28 @@ marketing:
         Didn't even know that was possible!
 
 stages:
-  - slug: "init"
-    name: "Respond with 200"
+  - slug: "connect-to-port"
+    name: "Bind to a port"
     difficulty: very_easy
     description_md: |
       TODO: Add description
     marketing_md: |
       TODO: Add marketing description
 
-  - slug: "respond_with_404"
+  - slug: "respond-with-200"
+    name: "Respond with 200"
+    difficulty: very_easy
+    description_md: |
+      This is an updpated description for the stage
+    marketing_md: |
+      TODO: Add marketing description
+
+  - slug: "respond-with-404"
     name: "Respond with 404"
     difficulty: very_easy
     description_md: |
       This is an updpated description for the stage
     marketing_md: |
       TODO: Add marketing description
-  
+
   # ... add the others
