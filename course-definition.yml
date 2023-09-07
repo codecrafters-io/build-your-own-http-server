@@ -1,9 +1,10 @@
+---
 # Used in your course's URL: https://app.codecrafters.io/courses/<slug>
 # Example: "redis"
 slug: "http-server"
 
-
-# The name of your course. This will be displayed in the course catalog, and on other course pages.
+# The name of your course. This will be displayed in the course catalog, and on
+# other course pages.
 # Example: "Build your own Redis"
 name: "Build your own HTTP server"
 
@@ -20,18 +21,23 @@ short_name: "HTTP Server"
 # Allowed values: "alpha", "beta", "live"
 release_status: "alpha"
 
-# This is shown on the course overview page. Markdown supported, recommended length ~30 words.
+# This is shown on the course overview page. Markdown supported, recommended
+# length ~30 words.
 #
 # Recommended format:
 #
-# > In this challenge, you'll build ABC that's capable of D, E, F and G. Along the way, we'll learn about X, Y, Z and more.
+# > In this challenge, you'll build ABC that's capable of D, E, F and G. Along
+# the way, we'll learn about X, Y, Z and more.
 #
 # Example:
 #
-# > In this challenge, you'll build a toy Redis clone that's capable of handling basic commands like PING, GET
-# > and SET. Along the way, we'll learn about event loops, the Redis Protocol and more.
+# > In this challenge, you'll build a toy Redis clone that's capable of handling
+# basic commands like PING, GET and SET. Along the way, we'll learn about event
+# loops, the Redis Protocol and more.
 description_md: |
-  TODO: Add description
+  In this challenge, you'll build a toy HTTP Server that's capable of handling
+  GET/POST requests. Along the way, we'll learn about TCP connections, HTTP
+  headers, HTTP verbs, handling multiple connections and more.
 
 # This is shown on the catalog. Plaintext only, recommended length ~10 words.
 #
@@ -45,9 +51,10 @@ description_md: |
 #
 # **TODO**: Remove _md suffix since markdown isn't supported
 short_description_md: |
-  TODO: Add short description
+  Learn about TCP servers, HTTP verbs, HTTP headers and more
 
-# The percentage of users who complete your course. We'll calculate this automatically in the future, safe to ignore for now.
+# The percentage of users who complete your course. We'll calculate this
+# automatically in the future, safe to ignore for now.
 completion_percentage: 10
 
 # The languages that your course supports.
@@ -66,42 +73,51 @@ marketing:
   # - "hard": > 6h of work for an experienced developer
   #
   # Allowed values: "easy", "medium", "hard"
-  difficulty: medium
-
+  difficulty: easy
 
   # This is shown as an example when users suggest extensions to your course.
   # Example: "Persistence" (from the Redis challenge)
   sample_extension_idea_title: "Pipelining"
 
   # This is shown as an example when users suggest extensions to your course.
-  # Example: "A Redis server that can read and write .rdb files" (from the Redis challenge)
-  sample_extension_idea_description: "A HTTP server that supports HTTP/1.1 pipelining"
+  # Example: "A Redis server that can read and write .rdb files" (from the
+  # Redis challenge)
+  sample_extension_idea_description:
+    "A HTTP server that supports HTTP/1.1 pipelining"
 
-  # These are some default testimonials that you can use. Feel free to switch these out with your own.
+  # These are some default testimonials that you can use. Feel free to switch
+  # these out with your own.
   testimonials:
     - author_name: "Ananthalakshmi Sankar"
       author_description: "Automation Engineer at Apple"
-      author_avatar: "https://codecrafters.io/images/external/testimonials/oxta.jpeg"
+      author_avatar:
+        "https://codecrafters.io/images/external/testimonials/oxta.jpeg"
       link: "https://github.com/anu294"
-      text: "There are few sites I like as much that have a step by step guide. The real-time feedback is so good, it's creepy!"
+      text:
+        "There are few sites I like as much that have a step by step guide. The
+        real-time feedback is so good, it's creepy!"
 
     - author_name: "Patrick Burris"
       author_description: "Senior Software Developer, CenturyLink"
-      author_avatar: "https://codecrafters.io/images/external/testimonials/patrick-burris.jpeg"
+      author_avatar:
+        "https://codecrafters.io/images/external/testimonials/patrick-burris.jpeg"
       link: "https://github.com/Jumballaya"
       text: |
         I think the instant feedback right there in the git push is really cool.
         Didn't even know that was possible!
 
 stages:
-  - slug: "connect-to-port" # A identifier for this stage, needs to be unique within a course.
+  # A identifier for this stage, needs to be unique within a course.
+  - slug: "connect-to-port"
 
-    # The name of the stage. This is shown in the course catalog, and on other course pages.
+    # The name of the stage. This is shown in the course catalog, and on other
+    # course pages.
     name: "Bind to a port"
 
     # The difficulty of this stage.
     #
-    # Recommended guidelines, based on how long the stage will take an experienced developer to complete:
+    # Recommended guidelines, based on how long the stage will take an
+    # experienced developer to complete:
     #
     # - Very Easy (< 5 minutes)
     # - Easy (5-10 minutes)
@@ -111,28 +127,133 @@ stages:
     # Allowed values: "very_easy", "easy", "medium", "hard"
     difficulty: very_easy
 
-    # The instructions for your stage. Markdown supported. Shown on the course page.
+    # The instructions for your stage. Markdown supported. Shown on the course
+    # page.
     description_md: |
-      TODO: Add description
+      In this stage, your task is to start a TCP server on port 4221.
 
-    # A description of this stage that is used on the course overview page and other marketing material. Markdown supported.
+    # A description of this stage that is used on the course overview page and
+    # other marketing material. Markdown supported.
     marketing_md: |
-      TODO: Add marketing description
+      In this stage, your task is to start a TCP server on port 4221.
 
   - slug: "respond-with-200"
     name: "Respond with 200"
     difficulty: very_easy
     description_md: |
-      This is an updpated description for the stage
+      In this stage, you will responde to any [HTTP Request](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview#requests)
+      with a 200 OK [HTTP Response](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview#responses)
+
+      At this point probably want to look into [HTTP Status Line](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages#status_line)
+      
+      Since the tester client _only_ sends http request on the index path, it's
+      okay to ignore what the client sends and hardcode a response. We'll get
+      to parsing client input in later stages.
     marketing_md: |
-      TODO: Add marketing description
+      In this stage, you will responde to any [HTTP Request](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview#requests)
+      with a 200 OK [HTTP Response](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview#responses)
 
   - slug: "respond-with-404"
     name: "Respond with 404"
     difficulty: very_easy
     description_md: |
-      This is an updpated description for the stage
-    marketing_md: |
-      TODO: Add marketing description
+      In this stage you will respond with a 404 not found on all but the default
+      route
 
-  # ... add the others
+      Learn more about [HTTP Status Codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
+    marketing_md: |
+      In this stage you will respond with a 404 not found on all but the default
+      route
+
+  - slug: "respond-with-content"
+    name: "Respond with content"
+    difficulty: easy
+    description_md: |
+      In this stage, the tester will send requests with arbitrary path which is
+      of the form `/echo/<path>` where <path> is a string of arbitrary
+      characters. You will have too parse this path and respond with this value
+      in the body of your response.
+
+      At this point you probably want to look into [HTTP Request Start Line](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages#start_line), 
+      [HTTP response body](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages#body_2) and
+      [HTTP response headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages#headers_2).
+
+      The tester expects you to set the [Content-Type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Type)
+      to be `text/plain` and [Content-Length](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Length) header
+      to be present with appropriate value.
+    marketing_md: |
+      In this stage, you will respond with custom data in HTTP response body
+      based on the request
+
+  - slug: "parse-headers"
+    name: "Parse headers"
+    difficulty: easy
+    description_md: |
+      In this stage, the tester will send requests with arbitrary values against
+      the header `User-Agent` your job is to extract that value and return it in
+      the response body. The request path for this will be `echo/user-agent`
+
+      At this point you probably want to look into [HTTP request headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages#headers), 
+
+      The tester expects you to set the [Content-Type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Type)
+      to be `text/plain` and [Content-Length](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Length) header
+      to be present with appropriate value.
+    marketing_md: |
+      In this stage, you will parse those http headers based on the request
+
+  - slug: "concurrent-connections"
+    name: "Concurrent connections"
+    difficulty: very_easy
+    description_md: |
+      In this stage, your server will need to handle multiple concurrent
+      clients.
+
+    marketing_md: |
+      In this stage, your server will need to handle multiple concurrent
+      clients.
+
+  - slug: "list-files"
+    name: "List files"
+    difficulty: easy
+    description_md: |
+      In this stage, your server will need to serve a list of files form the
+      directory `/tmp/data/codecrafters.io/http-server-tester/`. The request
+      path will be `/files`.
+
+      Remember the tester expects you to set the [Content-Type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Type)
+      to be `text/plain` and [Content-Length](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Length) header
+      to be present with appropriate value.
+
+    marketing_md: |
+      In this stage, your server will need to serve a list of files form a
+      given directory
+
+  - slug: "get-file"
+    name: "Get a file"
+    difficulty: easy
+    description_md: |
+      In this stage, your server will need to serve a file with the provided
+      name. The request path will be `/files/<filename>`. You have to use
+      the directory `/tmp/data/codecrafters.io/http-server-tester/` as the
+      directory to serve from.
+      
+      If the file doesn't exist, return a 404.
+    marketing_md: |
+      In this stage, your server will need to serve a file with the provided
+      name.
+
+  - slug: "post-file"
+    name: "Post a file"
+    difficulty: easy
+    description_md: |
+      In this stage, your server will need to store the contents in the POST
+      request body as a file to the server.
+
+      The request path will be `/files/<filename>`. You have to use the
+      directory `/tmp/data/codecrafters.io/http-server-tester/` as the
+      directory to which you will save this file.
+
+      At this point you will need to parse the request body to file
+      contents.
+    marketing_md: |
+      In this stage, your server will need to handle POST requests.
