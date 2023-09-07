@@ -23,3 +23,9 @@ anyhow = "1.0.59"                                   # error handling
 bytes = "1.3.0"                                     # helps manage buffers
 thiserror = "1.0.38"                                # error handling
 tokio = { version = "1.23.0", features = ["full"] } # async networking
+nom = "7.1.3"                                       # parser combinators
+itertools = "0.11.0"                                # General iterator helpers
+
+[dev-dependencies]
+pretty_assertions = "1.3.0"                         # nicer looking assertions
+
