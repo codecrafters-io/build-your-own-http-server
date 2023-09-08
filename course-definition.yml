@@ -165,7 +165,7 @@ stages:
     description_md: |
       In this stage, your program will need to extract the path from the HTTP request.
 
-      Here's what a HTTP request looks like:
+      Here's what the contents of a HTTP request look like:
 
       ```
       GET /index.html HTTP/1.1
@@ -179,6 +179,7 @@ stages:
           - `/index.html` is the [path](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages#path).
           - `HTTP/1.1` is the [HTTP version](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages#http_versions).
       - `Host: localhost:4221` and `User-Agent: curl/7.64.1` are [HTTP headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages#headers).
+      - Note that all of these lines are separated by `\r\n`, not just `\n`.
 
       In this stage, we'll only focus on extracting the path from the request.
 
