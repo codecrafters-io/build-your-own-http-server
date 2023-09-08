@@ -149,7 +149,7 @@ stages:
       - Read data from the connection (we'll get to parsing it in later stages)
       - Respond with `HTTP/1.1 200 OK\r\n\r\n` (there are two `\r\n`s at the end)
           - `HTTP/1.1 200 OK` is the [HTTP Status Line](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages#status_line).
-          - `\r\n`, also known as CRLF, is the end-of-line marker that HTTP uses.
+          - `\r\n`, also known as [CRLF](https://developer.mozilla.org/en-US/docs/Glossary/CRLF), is the end-of-line marker that HTTP uses.
           - The first `\r\n` signifies the end of the status line.
           - The second `\r\n` signifies the end of the response headers section (which is empty in this case).
 
