@@ -151,7 +151,7 @@ stages:
 
       The `HTTP/1.1 200 OK` is known as the [HTTP Status Line](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages#status_line).
 
-      It's okay to ignore the data sent by the client for now. We'll get to parsing it in later stages.
+      It's okay to ignore the data received from the connection for now. We'll get to parsing it in later stages.
     marketing_md: |
       In this stage, you'll extend your TCP server to respond to a HTTP request with a 200 response.
 
