@@ -150,7 +150,7 @@ stages:
       okay to ignore what the client sends and hardcode a response. We'll get
       to parsing client input in later stages.
     marketing_md: |
-      In this stage, you'll extend your TCP server to respond to a HTTP Request with a 200 response.
+      In this stage, you'll extend your TCP server to respond to a HTTP request with a 200 response.
 
   - slug: "respond-with-404"
     name: "Respond with 404"
