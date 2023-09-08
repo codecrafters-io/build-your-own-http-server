@@ -163,10 +163,25 @@ stages:
     name: "Respond with 404"
     difficulty: easy
     description_md: |
-      In this stage you will respond with a 404 not found on all but the default
-      route
+      In this stage, your program will need to extract the path from the HTTP request.
 
-      Learn more about [HTTP Status Codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
+      Here's what a HTTP request looks like:
+
+      ```
+      GET /index.html HTTP/1.1
+
+      Host: localhost:4221
+      User-Agent: curl/7.64.1
+      ```
+
+      - `GET` is the [HTTP method](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods).
+      - `/index.html` is the [path](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages#path).
+      - `HTTP/1.1` is the [HTTP version](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages#http_versions).
+      - `Host: localhost:4221` and `User-Agent: curl/7.64.1` are [HTTP headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages#headers).
+
+      In this stage, we'll only focus on extracting the path from the request.
+
+      If the path is `/`, you'll need to respond with a 200 OK response. Otherwise, you'll need to respond with a 404 Not Found response.
     marketing_md: |
       In this stage, you'll add support for returning a 404 response if a path isn't valid.
 
