@@ -210,7 +210,7 @@ stages:
 
   - slug: "list-files"
     name: "List files"
-    difficulty: easy
+    difficulty: medium
     description_md: |
       In this stage, your server will need to serve a list of files form the
       directory `/tmp/data/codecrafters.io/http-server-tester/`. The request
@@ -225,7 +225,7 @@ stages:
 
   - slug: "get-file"
     name: "Get a file"
-    difficulty: easy
+    difficulty: medium
     description_md: |
       In this stage, your server will need to serve a file with the provided
       name. The request path will be `/files/<filename>`. You have to use
@@ -238,7 +238,7 @@ stages:
 
   - slug: "post-file"
     name: "Post a file"
-    difficulty: easy
+    difficulty: medium
     description_md: |
       In this stage, your server will need to store the contents in the POST
       request body as a file to the server.
