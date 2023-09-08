@@ -135,7 +135,7 @@ stages:
     # A description of this stage that is used on the course overview page and
     # other marketing material. Markdown supported.
     marketing_md: |
-      In this stage, your task is to start a TCP server on port 4221.
+      In this stage, you'll build a TCP server that listens on port 4221.
 
   - slug: "respond-with-200"
     name: "Respond with 200"
@@ -150,8 +150,7 @@ stages:
       okay to ignore what the client sends and hardcode a response. We'll get
       to parsing client input in later stages.
     marketing_md: |
-      In this stage, you will responde to any [HTTP Request](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview#requests)
-      with a 200 OK [HTTP Response](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview#responses)
+      In this stage, you will respond to any HTTP Request with a 200 response.
 
   - slug: "respond-with-404"
     name: "Respond with 404"
@@ -162,8 +161,7 @@ stages:
 
       Learn more about [HTTP Status Codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
     marketing_md: |
-      In this stage you will respond with a 404 not found on all but the default
-      route
+      In this stage, you'll add support for returning a 404 response if a path isn't valid.
 
   - slug: "respond-with-content"
     name: "Respond with content"
@@ -182,8 +180,7 @@ stages:
       to be `text/plain` and [Content-Length](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Length) header
       to be present with appropriate value.
     marketing_md: |
-      In this stage, you will respond with custom data in HTTP response body
-      based on the request
+      In this stage, you'll add support for responding with a custom body in your HTTP response.
 
   - slug: "parse-headers"
     name: "Parse headers"
@@ -199,7 +196,7 @@ stages:
       to be `text/plain` and [Content-Length](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Length) header
       to be present with appropriate value.
     marketing_md: |
-      In this stage, you will parse those http headers based on the request
+      In this stage, you'll add support for parsing HTTP request headers.
 
   - slug: "concurrent-connections"
     name: "Concurrent connections"
@@ -209,8 +206,7 @@ stages:
       clients.
 
     marketing_md: |
-      In this stage, your server will need to handle multiple concurrent
-      clients.
+      In this stage, you'll add support for handling multiple concurrent connections.
 
   - slug: "list-files"
     name: "List files"
@@ -225,8 +221,7 @@ stages:
       to be present with appropriate value.
 
     marketing_md: |
-      In this stage, your server will need to serve a list of files form a
-      given directory
+      In this stage, you'll add support for serving a list of files from a given directory.
 
   - slug: "get-file"
     name: "Get a file"
@@ -239,8 +234,7 @@ stages:
 
       If the file doesn't exist, return a 404.
     marketing_md: |
-      In this stage, your server will need to serve a file with the provided
-      name.
+      In this stage, you'll add support for serving the contents of a file.
 
   - slug: "post-file"
     name: "Post a file"
@@ -256,4 +250,4 @@ stages:
       At this point you will need to parse the request body to file
       contents.
     marketing_md: |
-      In this stage, your server will need to handle POST requests.
+      In this stage, you'll add support for receiving POST requests.
