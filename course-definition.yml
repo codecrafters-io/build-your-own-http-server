@@ -51,7 +51,7 @@ description_md: |
 #
 # **TODO**: Remove _md suffix since markdown isn't supported
 short_description_md: |
-  Learn about TCP servers, HTTP verbs, HTTP headers and more
+  Learn about TCP servers, the HTTP protocol and more
 
 # The percentage of users who complete your course. We'll calculate this
 # automatically in the future, safe to ignore for now.
@@ -145,7 +145,7 @@ stages:
       with a 200 OK [HTTP Response](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview#responses)
 
       At this point probably want to look into [HTTP Status Line](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages#status_line)
-      
+
       Since the tester client _only_ sends http request on the index path, it's
       okay to ignore what the client sends and hardcode a response. We'll get
       to parsing client input in later stages.
@@ -174,7 +174,7 @@ stages:
       characters. You will have too parse this path and respond with this value
       in the body of your response.
 
-      At this point you probably want to look into [HTTP Request Start Line](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages#start_line), 
+      At this point you probably want to look into [HTTP Request Start Line](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages#start_line),
       [HTTP response body](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages#body_2) and
       [HTTP response headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages#headers_2).
 
@@ -193,7 +193,7 @@ stages:
       the header `User-Agent` your job is to extract that value and return it in
       the response body. The request path for this will be `echo/user-agent`
 
-      At this point you probably want to look into [HTTP request headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages#headers), 
+      At this point you probably want to look into [HTTP request headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages#headers),
 
       The tester expects you to set the [Content-Type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Type)
       to be `text/plain` and [Content-Length](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Length) header
@@ -236,7 +236,7 @@ stages:
       name. The request path will be `/files/<filename>`. You have to use
       the directory `/tmp/data/codecrafters.io/http-server-tester/` as the
       directory to serve from.
-      
+
       If the file doesn't exist, return a 404.
     marketing_md: |
       In this stage, your server will need to serve a file with the provided
