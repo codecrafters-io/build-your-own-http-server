@@ -200,7 +200,7 @@ stages:
 
   - slug: "concurrent-connections"
     name: "Concurrent connections"
-    difficulty: very_easy
+    difficulty: easy
     description_md: |
       In this stage, your server will need to handle multiple concurrent
       clients.
