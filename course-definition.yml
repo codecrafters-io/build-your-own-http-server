@@ -154,7 +154,7 @@ stages:
 
   - slug: "respond-with-404"
     name: "Respond with 404"
-    difficulty: very_easy
+    difficulty: easy
     description_md: |
       In this stage you will respond with a 404 not found on all but the default
       route
