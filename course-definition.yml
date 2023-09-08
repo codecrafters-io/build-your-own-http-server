@@ -174,9 +174,10 @@ stages:
       User-Agent: curl/7.64.1
       ```
 
-      - `GET` is the [HTTP method](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods).
-      - `/index.html` is the [path](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages#path).
-      - `HTTP/1.1` is the [HTTP version](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages#http_versions).
+      - `GET /index.html HTTP/1.1` is the [start line](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages#start_line).
+          - `GET` is the [HTTP method](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods).
+          - `/index.html` is the [path](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages#path).
+          - `HTTP/1.1` is the [HTTP version](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages#http_versions).
       - `Host: localhost:4221` and `User-Agent: curl/7.64.1` are [HTTP headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages#headers).
 
       In this stage, we'll only focus on extracting the path from the request.
