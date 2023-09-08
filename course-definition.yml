@@ -10,7 +10,7 @@ name: "Build your own HTTP server"
 
 # A short name for your course, this'll be used in copy like emails.
 # Example: "Redis"
-short_name: "HTTP Server"
+short_name: "HTTP server"
 
 # The release status for your course.
 #
@@ -35,7 +35,7 @@ release_status: "alpha"
 # basic commands like PING, GET and SET. Along the way, we'll learn about event
 # loops, the Redis Protocol and more.
 description_md: |
-  In this challenge, you'll build a toy HTTP Server that's capable of handling
+  In this challenge, you'll build a toy HTTP server that's capable of handling
   GET/POST requests. Along the way, we'll learn about TCP connections, HTTP
   headers, HTTP verbs, handling multiple connections and more.
 

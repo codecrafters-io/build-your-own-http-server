@@ -1,7 +1,7 @@
 ![progress-banner](https://codecrafters.io/landing/images/default_progress_banners/http-server.png)
 
 This is a starting point for {{language_name}} solutions to the
-["Build Your Own HTTP Server" Challenge](https://app.codecrafters.io/courses/http-server/overview).
+["Build Your Own HTTP server" Challenge](https://app.codecrafters.io/courses/http-server/overview).
 
 [HTTP](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol) is the protocol that powers the web. In
 this challenge, you'll build a HTTP/1.1 server that is capable of serving multiple clients.
