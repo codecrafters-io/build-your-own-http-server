@@ -232,21 +232,6 @@ stages:
     marketing_md: |
       In this stage, you'll add support for handling multiple concurrent connections.
 
-  - slug: "list-files"
-    name: "List files"
-    difficulty: medium
-    description_md: |
-      In this stage, your server will need to serve a list of files form the
-      directory `/tmp/data/codecrafters.io/http-server-tester/`. The request
-      path will be `/files`.
-
-      Remember the tester expects you to set the [Content-Type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Type)
-      to be `text/plain` and [Content-Length](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Length) header
-      to be present with appropriate value.
-
-    marketing_md: |
-      In this stage, you'll add support for serving a list of files from a given directory.
-
   - slug: "get-file"
     name: "Get a file"
     difficulty: medium
