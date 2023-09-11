@@ -226,15 +226,31 @@ stages:
     name: "Parse headers"
     difficulty: easy
     description_md: |
-      In this stage, the tester will send requests with arbitrary values against
-      the header `User-Agent` your job is to extract that value and return it in
-      the response body. The request path for this will be `echo/user-agent`
+      In this stage, your program will need to parse HTTP request headers.
 
-      At this point you probably want to look into [HTTP request headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages#headers),
+      The tester will send you a request of the form `GET /user-agent`, and it'll include a `User-Agent` header.
 
-      The tester expects you to set the [Content-Type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Type)
-      to be `text/plain` and [Content-Length](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Length) header
-      to be present with appropriate value.
+      Your program will need to respond with a 200 OK response. The response should have a content type of `text/plain`, and it should contain the user agent value as the body.
+
+      For example, here's a request you might receive:
+
+      ```
+      GET /user-agent HTTP/1.1
+
+      Host: localhost:4221
+      User-Agent: curl/7.64.1
+      ```
+
+      and here's the response you're expected to send back:
+
+      ```
+      HTTP/1.1 200 OK
+
+      Content-Type: text/plain
+      Content-Length: 11
+
+      curl/7.64.1
+      ```
     marketing_md: |
       In this stage, you'll add support for parsing HTTP request headers.
 
