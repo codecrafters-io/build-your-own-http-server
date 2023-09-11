@@ -258,7 +258,7 @@ stages:
     name: "Concurrent connections"
     difficulty: easy
     description_md: |
-      Up until now, we've only been handling one connection at a time.
+      Up until now, we've only tested your program against a single connection in each stage.
 
       In this stage, your server will need to handle multiple concurrent connections.
 
