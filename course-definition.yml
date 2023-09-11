@@ -191,18 +191,34 @@ stages:
     name: "Respond with content"
     difficulty: easy
     description_md: |
-      In this stage, the tester will send requests with arbitrary path which is
-      of the form `/echo/<path>` where <path> is a string of arbitrary
-      characters. You will have too parse this path and respond with this value
-      in the body of your response.
+      In this stage, your program will need to respond with a body. In the previous stages we were only sending a status code, no body.
 
-      At this point you probably want to look into [HTTP Request Start Line](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages#start_line),
-      [HTTP response body](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages#body_2) and
-      [HTTP response headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages#headers_2).
+      The tester will send you a request of the form `GET /echo/<a-random-string>`.
 
-      The tester expects you to set the [Content-Type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Type)
-      to be `text/plain` and [Content-Length](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Length) header
-      to be present with appropriate value.
+      Your program will need to respond with a 200 OK response. The response should have a content type of `text/plain`, and it should contain the random string as the body.
+
+      As an example, here's a request you might receive:
+
+      ```
+      GET /echo/abc HTTP/1.1
+
+      Host: localhost:4221
+      User-Agent: curl/7.64.1
+      ```
+
+      And here's the response you're expected to send back:
+
+      ```
+      HTTP/1.1 200 OK
+      Content-Type: text/plain
+      Content-Length: 3
+
+      abc
+      ```
+
+      Remember, lines in the response are separated by `\r\n`, not just `\n`.
+
+      For more details on the structure of a HTTP response, view the [MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages#http_responses).
     marketing_md: |
       In this stage, you'll add support for responding with a custom body in your HTTP response.
 
