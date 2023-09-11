@@ -258,9 +258,11 @@ stages:
     name: "Concurrent connections"
     difficulty: easy
     description_md: |
-      In this stage, your server will need to handle multiple concurrent
-      clients.
+      Up until now, we've only been handling one connection at a time.
 
+      In this stage, your server will need to handle multiple concurrent connections.
+
+      The tester will send you multiple requests at the same time. Your server will need to respond to all of them.
     marketing_md: |
       In this stage, you'll add support for handling multiple concurrent connections.
 
