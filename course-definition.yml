@@ -275,7 +275,7 @@ stages:
       The tester will execute your program with a `--directory` flag like this:
 
       ```
-      ./your_http_server --directory <directory>
+      ./your_server.sh --directory <directory>
       ```
 
       It'll then send you a request of the form `GET /files/<filename>`.
