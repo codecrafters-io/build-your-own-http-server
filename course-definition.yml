@@ -292,14 +292,16 @@ stages:
     name: "Post a file"
     difficulty: medium
     description_md: |
-      In this stage, your server will need to store the contents in the POST
-      request body as a file to the server.
+      In this stage, your server will need to accept the contents of a file in a POST request and save it to a directory.
 
-      The request path will be `/files/<filename>`. You have to use the
-      directory `/tmp/data/codecrafters.io/http-server-tester/` as the
-      directory to which you will save this file.
+      Just like in the previous stage, the tester will execute your program with a `--directory` flag like this:
 
-      At this point you will need to parse the request body to file
-      contents.
+      ```
+      ./your_server.sh --directory <directory>
+      ```
+
+      It'll then send you a request of the form `POST /files/<filename>`. The request body will contain the contents of the file.
+
+      You'll need to fetch the contents of the file from the request body and save it to `<directory>/<filename>`.
     marketing_md: |
       In this stage, you'll add support for receiving POST requests.
