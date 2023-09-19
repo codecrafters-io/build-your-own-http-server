@@ -270,10 +270,19 @@ stages:
     name: "Get a file"
     difficulty: medium
     description_md: |
-      In this stage, your server will need to serve a file with the provided
-      name. The request path will be `/files/<filename>`. You have to use
-      the directory `/tmp/data/codecrafters.io/http-server-tester/` as the
-      directory to serve from.
+      In this stage, your server will need to return the contents of a file.
+
+      The tester will execute your program with a `--directory` flag like this:
+
+      ```
+      ./your_http_server --directory <directory>
+      ```
+
+      It'll then send you a request of the form `GET /files/<filename>`.
+
+      If `<filename>` exists in `<directory>`, you'll need to respond with a 200 OK response. The
+      response should have a content type of `text/plain`, and it should contain the contents of the
+      file as the body.
 
       If the file doesn't exist, return a 404.
     marketing_md: |
