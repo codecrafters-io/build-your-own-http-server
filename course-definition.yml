@@ -19,7 +19,7 @@ short_name: "HTTP server"
 # - live: Visible to all CodeCrafters users, no label.
 #
 # Allowed values: "alpha", "beta", "live"
-release_status: "alpha"
+release_status: "beta"
 
 # This is shown on the course overview page. Markdown supported, recommended
 # length ~30 words.
