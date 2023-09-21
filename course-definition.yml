@@ -34,7 +34,7 @@ release_status: "beta"
 # > In this challenge, you'll build a toy Redis clone that's capable of handling
 # basic commands like PING, GET and SET. Along the way, we'll learn about event
 # loops, the Redis Protocol and more.
-description_md: |
+description_md: |-
   In this challenge, you'll build a toy HTTP server that's capable of handling
   GET/POST requests. Along the way, we'll learn about TCP connections, HTTP
   headers, HTTP verbs, handling multiple connections and more.
@@ -50,7 +50,7 @@ description_md: |
 # > Learn about TCP servers, the Redis protocol and more
 #
 # **TODO**: Remove _md suffix since markdown isn't supported
-short_description_md: |
+short_description_md: |-
   Learn about TCP servers, the HTTP protocol and more
 
 # The percentage of users who complete your course. We'll calculate this
@@ -102,7 +102,7 @@ marketing:
       author_avatar:
         "https://codecrafters.io/images/external/testimonials/patrick-burris.jpeg"
       link: "https://github.com/Jumballaya"
-      text: |
+      text: |-
         I think the instant feedback right there in the git push is really cool.
         Didn't even know that was possible!
 
@@ -129,18 +129,18 @@ stages:
 
     # The instructions for your stage. Markdown supported. Shown on the course
     # page.
-    description_md: |
+    description_md: |-
       In this stage, your task is to start a TCP server on port 4221.
 
     # A description of this stage that is used on the course overview page and
     # other marketing material. Markdown supported.
-    marketing_md: |
+    marketing_md: |-
       In this stage, you'll build a TCP server that listens on port 4221.
 
   - slug: "respond-with-200"
     name: "Respond with 200"
     difficulty: very_easy
-    description_md: |
+    description_md: |-
       In this stage, you'll respond to a HTTP request with a 200 OK response.
 
       Your program will need to:
@@ -156,13 +156,13 @@ stages:
       It's okay to ignore the data received from the connection for now. We'll get to parsing it in later stages.
 
       For more details on the structure of a HTTP response, view the [MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages#http_responses).
-    marketing_md: |
+    marketing_md: |-
       In this stage, you'll extend your TCP server to respond to a HTTP request with a 200 response.
 
   - slug: "respond-with-404"
     name: "Respond with 404"
     difficulty: easy
-    description_md: |
+    description_md: |-
       In this stage, your program will need to extract the path from the HTTP request.
 
       Here's what the contents of a HTTP request look like:
@@ -184,13 +184,13 @@ stages:
       In this stage, we'll only focus on extracting the path from the request.
 
       If the path is `/`, you'll need to respond with a 200 OK response. Otherwise, you'll need to respond with a 404 Not Found response.
-    marketing_md: |
+    marketing_md: |-
       In this stage, you'll add support for returning a 404 response if a path isn't valid.
 
   - slug: "respond-with-content"
     name: "Respond with content"
     difficulty: easy
-    description_md: |
+    description_md: |-
       In this stage, your program will need to respond with a body. In the previous stages we were only sending a status code, no body.
 
       The tester will send you a request of the form `GET /echo/<a-random-string>`.
@@ -219,13 +219,13 @@ stages:
       Remember, lines in the response are separated by `\r\n`, not just `\n`.
 
       For more details on the structure of a HTTP response, view the [MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages#http_responses).
-    marketing_md: |
+    marketing_md: |-
       In this stage, you'll add support for responding with a custom body in your HTTP response.
 
   - slug: "parse-headers"
     name: "Parse headers"
     difficulty: easy
-    description_md: |
+    description_md: |-
       In this stage, your program will need to parse HTTP request headers.
 
       The tester will send you a request of the form `GET /user-agent`, and it'll include a `User-Agent` header.
@@ -251,25 +251,25 @@ stages:
 
       curl/7.64.1
       ```
-    marketing_md: |
+    marketing_md: |-
       In this stage, you'll add support for parsing HTTP request headers.
 
   - slug: "concurrent-connections"
     name: "Concurrent connections"
     difficulty: easy
-    description_md: |
+    description_md: |-
       Up until now, we've only tested your program against a single connection in each stage.
 
       In this stage, your server will need to handle multiple concurrent connections.
 
       The tester will send you multiple requests at the same time. Your server will need to respond to all of them.
-    marketing_md: |
+    marketing_md: |-
       In this stage, you'll add support for handling multiple concurrent connections.
 
   - slug: "get-file"
     name: "Get a file"
     difficulty: medium
-    description_md: |
+    description_md: |-
       In this stage, your server will need to return the contents of a file.
 
       The tester will execute your program with a `--directory` flag like this:
@@ -285,13 +285,13 @@ stages:
       file as the body.
 
       If the file doesn't exist, return a 404.
-    marketing_md: |
+    marketing_md: |-
       In this stage, you'll add support for serving the contents of a file.
 
   - slug: "post-file"
     name: "Post a file"
     difficulty: medium
-    description_md: |
+    description_md: |-
       In this stage, your server will need to accept the contents of a file in a POST request and save it to a directory.
 
       Just like in the previous stage, the tester will execute your program with a `--directory` flag like this:
@@ -304,5 +304,5 @@ stages:
 
       You'll need to fetch the contents of the file from the request body and save it to `<directory>/<filename>`. The response code
       returned should be 201.
-    marketing_md: |
+    marketing_md: |-
       In this stage, you'll add support for receiving POST requests.
