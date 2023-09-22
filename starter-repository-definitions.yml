@@ -61,3 +61,19 @@
   template_attributes:
     required_executable: "go (1.19)"
     user_editable_file: "app/server.go"
+
+- language: javascript
+  file_mappings:
+    - source: starter_templates/README.md
+      target: README.md
+    - source: starter_templates/codecrafters.yml
+      target: codecrafters.yml
+    - source: starter_templates/javascript/app/main.js
+      target: app/main.js
+    - source: starter_templates/javascript/your_server.sh
+      target: your_server.sh
+    - source: starter_templates/.gitattributes
+      target: .gitattributes
+  template_attributes:
+    required_executable: "node (18)"
+    user_editable_file: "app/main.js"
