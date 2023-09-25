@@ -61,7 +61,6 @@ completion_percentage: 10
 languages:
   - slug: "go"
   - slug: "javascript"
-    release_status: "alpha"
   - slug: "python"
   - slug: "rust"
 
