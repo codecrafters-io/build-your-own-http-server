@@ -1,0 +1,42 @@
+# DON'T EDIT THIS!
+#
+# Codecrafters relies on this file being intact to run tests successfully. Any changes
+# here will not reflect when CodeCrafters tests your code, and might even cause build
+# failures.
+#
+# DON'T EDIT THIS!
+name: hs-http-server-clone
+version: 0.1.0.0
+license: BSD3
+
+ghc-options:
+  - -Wall
+  - -Wcompat
+  - -Widentities
+  - -Wincomplete-record-updates
+  - -Wincomplete-uni-patterns
+  - -Wmissing-export-lists
+  - -Wmissing-home-modules
+  - -Wpartial-fields
+  - -Wredundant-constraints
+
+dependencies:
+  - base >= 4.7 && < 5
+  - network-simple # establish a simple TCP network
+  - bytestring # useful to send bytes over the network
+  - mtl # may help with structuring
+  - word8 # may help in parsing with attoparsec
+  - optparse-applicative # may help with cli args parsing
+  - filepath # required to deal with files
+  - directory # required to deal with paths and dirs
+  # Parsing libs
+  - attoparsec
+
+executables:
+  hs-http-server-clone-exe:
+    main: Main.hs
+    source-dirs: app
+    ghc-options:
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
