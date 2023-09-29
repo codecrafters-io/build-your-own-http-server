@@ -63,6 +63,7 @@ languages:
   - slug: "javascript"
   - slug: "python"
   - slug: "rust"
+  - slug: "haskell"
 
 marketing:
   # Shown in the catalog.
