@@ -287,6 +287,8 @@ stages:
       file as the body.
 
       If the file doesn't exist, return a 404.
+      
+      We pass in absolute path to your program using the `--directory` flag.
     marketing_md: |-
       In this stage, you'll add support for serving the contents of a file.
 
@@ -306,5 +308,7 @@ stages:
 
       You'll need to fetch the contents of the file from the request body and save it to `<directory>/<filename>`. The response code
       returned should be 201.
+
+      We pass in absolute path to your program using the `--directory` flag.
     marketing_md: |-
       In this stage, you'll add support for receiving POST requests.
