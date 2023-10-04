@@ -60,10 +60,10 @@ completion_percentage: 10
 # The languages that your course supports.
 languages:
   - slug: "go"
+  - slug: "haskell"
   - slug: "javascript"
   - slug: "python"
   - slug: "rust"
-  - slug: "haskell"
 
 marketing:
   # Shown in the catalog.
@@ -287,7 +287,7 @@ stages:
       file as the body.
 
       If the file doesn't exist, return a 404.
-      
+
       We pass in absolute path to your program using the `--directory` flag.
     marketing_md: |-
       In this stage, you'll add support for serving the contents of a file.
