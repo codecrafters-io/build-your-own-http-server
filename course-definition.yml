@@ -193,11 +193,19 @@ stages:
     name: "Respond with content"
     difficulty: easy
     description_md: |-
-      In this stage, your program will need to respond with a body. In the previous stages we were only sending a status code, no body.
+      In this stage, your program will need to respond with a body. In the
+      previous stages we were only sending a status code, no body.
 
-      The tester will send you a request of the form `GET /echo/<a-random-string>`.
+      The task here is to parse the path from the HTTP request. We will send a
+      random string in the url path you will need to parse that string and then
+      respond with the parsed string (only) in the rsponse body.
 
-      Your program will need to respond with a 200 OK response. The response should have a content type of `text/plain`, and it should contain the random string as the body.
+      The tester will send you a request of the form
+      `GET /echo/<a-random-string>`.
+
+      Your program will need to respond with a 200 OK response. The response
+      should have a content type of `text/plain`, and it should contain the
+      random string as the body.
 
       As an example, here's a request you might receive:
 
@@ -220,7 +228,8 @@ stages:
 
       Remember, lines in the response are separated by `\r\n`, not just `\n`.
 
-      For more details on the structure of a HTTP response, view the [MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages#http_responses).
+      For more details on the structure of a HTTP response, view the
+      [MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages#http_responses).
     marketing_md: |-
       In this stage, you'll add support for responding with a custom body in your HTTP response.
 
