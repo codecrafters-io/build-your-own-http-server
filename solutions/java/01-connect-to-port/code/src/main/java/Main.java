@@ -6,23 +6,14 @@ public class Main {
   public static void main(String[] args) {
     ServerSocket serverSocket = null;
     Socket clientSocket = null;
-    int port = 4221;
+
     try {
-      serverSocket = new ServerSocket(port);
+      serverSocket = new ServerSocket(4221);
       serverSocket.setReuseAddress(true);
-      // Wait for connection from client.
-      clientSocket = serverSocket.accept();
+      clientSocket = serverSocket.accept(); // Wait for connection from client.
       System.out.println("accepted new connection");
     } catch (IOException e) {
       System.out.println("IOException: " + e.getMessage());
-    } finally {
-      try {
-        if (clientSocket != null) {
-          clientSocket.close();
-        }
-      } catch (IOException e) {
-        System.out.println("IOException: " + e.getMessage());
-      }
     }
   }
 }

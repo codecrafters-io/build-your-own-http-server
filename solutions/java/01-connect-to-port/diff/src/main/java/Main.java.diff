@@ -1,4 +1,4 @@
-@@ -1,32 +1,28 @@
+@@ -1,24 +1,19 @@
  import java.io.IOException;
  import java.net.ServerSocket;
  import java.net.Socket;
@@ -7,47 +7,29 @@
    public static void main(String[] args) {
 -    // You can use print statements as follows for debugging, they'll be visible when running tests.
 -    System.out.println("Logs from your program will appear here!");
--
++    ServerSocket serverSocket = null;
++    Socket clientSocket = null;
+
 -    // Uncomment this block to pass the first stage
+-    //
 -    // ServerSocket serverSocket = null;
 -    // Socket clientSocket = null;
--    // int port = 4221;
+-    //
 -    // try {
--    //   serverSocket = new ServerSocket(port);
+-    //   serverSocket = new ServerSocket(4221);
 -    //   serverSocket.setReuseAddress(true);
--    //   // Wait for connection from client.
--    //   clientSocket = serverSocket.accept();
+-    //   clientSocket = serverSocket.accept(); // Wait for connection from client.
 -    //   System.out.println("accepted new connection");
 -    // } catch (IOException e) {
 -    //   System.out.println("IOException: " + e.getMessage());
--    // } finally {
--    //   try {
--    //     if (clientSocket != null) {
--    //       clientSocket.close();
--    //     }
--    //   } catch (IOException e) {
--    //     System.out.println("IOException: " + e.getMessage());
--    //   }
 -    // }
-+    ServerSocket serverSocket = null;
-+    Socket clientSocket = null;
-+    int port = 4221;
 +    try {
-+      serverSocket = new ServerSocket(port);
++      serverSocket = new ServerSocket(4221);
 +      serverSocket.setReuseAddress(true);
-+      // Wait for connection from client.
-+      clientSocket = serverSocket.accept();
++      clientSocket = serverSocket.accept(); // Wait for connection from client.
 +      System.out.println("accepted new connection");
 +    } catch (IOException e) {
 +      System.out.println("IOException: " + e.getMessage());
-+    } finally {
-+      try {
-+        if (clientSocket != null) {
-+          clientSocket.close();
-+        }
-+      } catch (IOException e) {
-+        System.out.println("IOException: " + e.getMessage());
-+      }
 +    }
    }
  }

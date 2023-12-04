@@ -8,25 +8,17 @@ public class Main {
     System.out.println("Logs from your program will appear here!");
 
     // Uncomment this block to pass the first stage
+    //
     // ServerSocket serverSocket = null;
     // Socket clientSocket = null;
-    // int port = 4221;
+    //
     // try {
-    //   serverSocket = new ServerSocket(port);
+    //   serverSocket = new ServerSocket(4221);
     //   serverSocket.setReuseAddress(true);
-    //   // Wait for connection from client.
-    //   clientSocket = serverSocket.accept();
+    //   clientSocket = serverSocket.accept(); // Wait for connection from client.
     //   System.out.println("accepted new connection");
     // } catch (IOException e) {
     //   System.out.println("IOException: " + e.getMessage());
-    // } finally {
-    //   try {
-    //     if (clientSocket != null) {
-    //       clientSocket.close();
-    //     }
-    //   } catch (IOException e) {
-    //     System.out.println("IOException: " + e.getMessage());
-    //   }
     // }
   }
 }
