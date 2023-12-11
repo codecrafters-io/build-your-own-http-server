@@ -24,13 +24,6 @@ dependencies:
   - base >= 4.7 && < 5
   - network-simple # establish a simple TCP network
   - bytestring # useful to send bytes over the network
-  - mtl # may help with structuring
-  - word8 # may help in parsing with attoparsec
-  - optparse-applicative # may help with cli args parsing
-  - filepath # required to deal with files
-  - directory # required to deal with paths and dirs
-  # Parsing libs
-  - attoparsec
 
 executables:
   hs-http-server-clone-exe:
