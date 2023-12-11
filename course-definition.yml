@@ -86,25 +86,21 @@ marketing:
   # This is shown as an example when users suggest extensions to your course.
   # Example: "A Redis server that can read and write .rdb files" (from the
   # Redis challenge)
-  sample_extension_idea_description:
-    "A HTTP server that supports HTTP/1.1 pipelining"
+  sample_extension_idea_description: "A HTTP server that supports HTTP/1.1 pipelining"
 
   # These are some default testimonials that you can use. Feel free to switch
   # these out with your own.
   testimonials:
     - author_name: "Ananthalakshmi Sankar"
       author_description: "Automation Engineer at Apple"
-      author_avatar:
-        "https://codecrafters.io/images/external/testimonials/oxta.jpeg"
+      author_avatar: "https://codecrafters.io/images/external/testimonials/oxta.jpeg"
       link: "https://github.com/anu294"
-      text:
-        "There are few sites I like as much that have a step by step guide. The
+      text: "There are few sites I like as much that have a step by step guide. The
         real-time feedback is so good, it's creepy!"
 
     - author_name: "Patrick Burris"
       author_description: "Senior Software Developer, CenturyLink"
-      author_avatar:
-        "https://codecrafters.io/images/external/testimonials/patrick-burris.jpeg"
+      author_avatar: "https://codecrafters.io/images/external/testimonials/patrick-burris.jpeg"
       link: "https://github.com/Jumballaya"
       text: |-
         I think the instant feedback right there in the git push is really cool.
@@ -173,7 +169,6 @@ stages:
 
       ```
       GET /index.html HTTP/1.1
-
       Host: localhost:4221
       User-Agent: curl/7.64.1
       ```
@@ -213,7 +208,6 @@ stages:
 
       ```
       GET /echo/abc HTTP/1.1
-
       Host: localhost:4221
       User-Agent: curl/7.64.1
       ```
@@ -249,7 +243,6 @@ stages:
 
       ```
       GET /user-agent HTTP/1.1
-
       Host: localhost:4221
       User-Agent: curl/7.64.1
       ```
@@ -258,7 +251,6 @@ stages:
 
       ```
       HTTP/1.1 200 OK
-
       Content-Type: text/plain
       Content-Length: 11
 
