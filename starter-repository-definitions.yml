@@ -121,3 +121,59 @@
   template_attributes:
     required_executable: "java (21)"
     user_editable_file: "src/main/java/Main.java"
+
+- language: c
+  file_mappings:
+    - source: starter_templates/README.md
+      target: README.md
+    - source: starter_templates/codecrafters.yml
+      target: codecrafters.yml
+    - source: starter_templates/c/app/server.c
+      target: app/server.c
+    - source: starter_templates/c/your_server.sh
+      target: your_server.sh
+    - source: starter_templates/.gitattributes
+      target: .gitattributes
+  template_attributes:
+    required_executable: "gcc"
+    user_editable_file: "app/server.c"
+
+- language: cpp
+  file_mappings:
+    - source: starter_templates/README.md
+      target: README.md
+    - source: starter_templates/codecrafters.yml
+      target: codecrafters.yml
+    - source: starter_templates/cpp/.gitignore
+      target: .gitignore
+    - source: starter_templates/cpp/src/server.cpp
+      target: src/server.cpp
+    - source: starter_templates/cpp/CMakeLists.txt
+      target: CMakeLists.txt
+    - source: starter_templates/cpp/your_server.sh
+      target: your_server.sh
+  template_attributes:
+    required_executable: "cmake"
+    user_editable_file: "src/server.cpp"
+
+- language: csharp
+  file_mappings:
+    - source: starter_templates/README.md
+      target: README.md
+    - source: starter_templates/codecrafters.yml
+      target: codecrafters.yml
+    - source: starter_templates/csharp/.gitignore
+      target: .gitignore
+    - source: starter_templates/csharp/src/Server.cs
+      target: src/Server.cs
+    - source: starter_templates/csharp/codecrafters-http-server.csproj
+      target: codecrafters-http-server.csproj
+    - source: starter_templates/csharp/codecrafters-http-server.sln
+      target: codecrafters-http-server.sln
+    - source: starter_templates/csharp/your_server.sh
+      target: your_server.sh
+    - source: starter_templates/.gitattributes
+      target: .gitattributes
+  template_attributes:
+    required_executable: "dotnet (6.0)"
+    user_editable_file: "src/Server.cs"
