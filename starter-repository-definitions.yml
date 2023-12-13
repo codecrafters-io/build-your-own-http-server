@@ -137,3 +137,21 @@
   template_attributes:
     required_executable: "gcc"
     user_editable_file: "app/server.c"
+
+- language: cpp
+  file_mappings:
+    - source: starter_templates/README.md
+      target: README.md
+    - source: starter_templates/codecrafters.yml
+      target: codecrafters.yml
+    - source: starter_templates/cpp/.gitignore
+      target: .gitignore
+    - source: starter_templates/cpp/src/server.cpp
+      target: src/server.cpp
+    - source: starter_templates/cpp/CMakeLists.txt
+      target: CMakeLists.txt
+    - source: starter_templates/cpp/your_server.sh
+      target: your_server.sh
+  template_attributes:
+    required_executable: "cmake"
+    user_editable_file: "src/server.cpp"
