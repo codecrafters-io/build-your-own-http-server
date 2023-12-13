@@ -66,6 +66,12 @@ languages:
   - slug: "rust"
   - slug: "java"
     release_status: "beta"
+  - slug: "c"
+    release_status: "beta"
+  - slug: "cpp"
+    release_status: "beta"
+  - slug: "csharp"
+    release_status: "beta"
 
 marketing:
   # Shown in the catalog.
@@ -95,7 +101,8 @@ marketing:
       author_description: "Automation Engineer at Apple"
       author_avatar: "https://codecrafters.io/images/external/testimonials/oxta.jpeg"
       link: "https://github.com/anu294"
-      text: "There are few sites I like as much that have a step by step guide. The
+      text:
+        "There are few sites I like as much that have a step by step guide. The
         real-time feedback is so good, it's creepy!"
 
     - author_name: "Patrick Burris"
