@@ -121,3 +121,19 @@
   template_attributes:
     required_executable: "java (21)"
     user_editable_file: "src/main/java/Main.java"
+
+- language: c
+  file_mappings:
+    - source: starter_templates/README.md
+      target: README.md
+    - source: starter_templates/codecrafters.yml
+      target: codecrafters.yml
+    - source: starter_templates/c/app/server.c
+      target: app/server.c
+    - source: starter_templates/c/your_server.sh
+      target: your_server.sh
+    - source: starter_templates/.gitattributes
+      target: .gitattributes
+  template_attributes:
+    required_executable: "gcc"
+    user_editable_file: "app/server.c"
