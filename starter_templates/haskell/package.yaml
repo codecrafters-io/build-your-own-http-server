@@ -22,7 +22,7 @@ ghc-options:
 
 dependencies:
   - base >= 4.7 && < 5
-  - network-simple # establish a simple TCP network
+  - network # establish a simple TCP network
   - bytestring # useful to send bytes over the network
 
 executables:
