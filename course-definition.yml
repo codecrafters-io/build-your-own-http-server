@@ -21,23 +21,25 @@ short_name: "HTTP server"
 # Allowed values: "alpha", "beta", "live"
 release_status: "live"
 
-# This is shown on the course overview page. Markdown supported, recommended
-# length ~30 words.
+# This is shown on the course overview page. Markdown supported, recommended length ~40 words.
 #
 # Recommended format:
 #
-# > In this challenge, you'll build ABC that's capable of D, E, F and G. Along
-# the way, we'll learn about X, Y, Z and more.
+# > ABC is <whatever>. In this challenge, you'll build your own ABC that's capable of D, E, F and G.
+# >
+# > Along the way, we'll learn about X, Y, Z and more.
 #
 # Example:
 #
-# > In this challenge, you'll build a toy Redis clone that's capable of handling
-# basic commands like PING, GET and SET. Along the way, we'll learn about event
-# loops, the Redis Protocol and more.
+# > Redis is an in-memory data structure store often used as a database, cache, message broken and streaming engine. In this challenge
+# > you'll build your own Redis server that is capable of serving basic commands, reading RDB files and more.
+# >
+# > Along the way, you'll learn about TCP servers, the Redis Protocol and more.
 description_md: |-
-  In this challenge, you'll build a toy HTTP server that's capable of handling
-  GET/POST requests. Along the way, we'll learn about TCP connections, HTTP
-  headers, HTTP verbs, handling multiple connections and more.
+  HTTP is the protocol that powers the web. In this challenge, you'll build a HTTP server that's
+  capable of handling simple GET/POST requests, serving files and handling multiple concurrent connections.
+
+  Along the way, we'll learn about TCP connections, HTTP headers, HTTP verbs, handling multiple connections and more.
 
 # This is shown on the catalog. Plaintext only, recommended length ~10 words.
 #
