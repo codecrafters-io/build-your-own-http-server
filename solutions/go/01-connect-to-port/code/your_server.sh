@@ -6,5 +6,6 @@
 #
 # DON'T EDIT THIS!
 set -e
-go build -o "/tmp/codecrafters-http-target/your_server" app/*.go
-exec "/tmp/codecrafters-http-target/your_server" "$@"
+tmpFile=$(mktemp)
+go build -o "$tmpFile" app/*.go
+exec "$tmpFile" "$@"
