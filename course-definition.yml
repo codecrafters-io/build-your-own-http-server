@@ -212,7 +212,7 @@ stages:
 
       The task here is to parse the path from the HTTP request. We will send a
       random string in the url path you will need to parse that string and then
-      respond with the parsed string (only) in the rsponse body.
+      respond with the parsed string (only) in the response body.
 
       The tester will send you a request of the form
       `GET /echo/<a-random-string>`.
