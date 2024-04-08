@@ -1,0 +1,354 @@
+---
+# Used in your course's URL: https://app.codecrafters.io/courses/<slug>
+# Example: "redis"
+slug: "http-server"
+
+# The name of your course. This will be displayed in the course catalog, and on
+# other course pages.
+# Example: "Build your own Redis"
+name: "Build your own HTTP server"
+
+# A short name for your course, this'll be used in copy like emails.
+# Example: "Redis"
+short_name: "HTTP server"
+
+# The release status for your course.
+#
+# - alpha: Only visible to yourself and CodeCrafters staff.
+# - beta: Visible to all CodeCrafters users, but with a "beta" label.
+# - live: Visible to all CodeCrafters users, no label.
+#
+# Allowed values: "alpha", "beta", "live"
+release_status: "live"
+
+# This is shown on the course overview page. Markdown supported, recommended length ~40 words.
+#
+# Recommended format:
+#
+# > ABC is <whatever>. In this challenge, you'll build your own ABC that's capable of D, E, F and G.
+# >
+# > Along the way, we'll learn about X, Y, Z and more.
+#
+# Example:
+#
+# > Redis is an in-memory data structure store often used as a database, cache, message broken and streaming engine. In this challenge
+# > you'll build your own Redis server that is capable of serving basic commands, reading RDB files and more.
+# >
+# > Along the way, you'll learn about TCP servers, the Redis Protocol and more.
+description_md: |-
+  HTTP is the protocol that powers the web. In this challenge, you'll build a HTTP server that's
+  capable of handling simple GET/POST requests, serving files and handling multiple concurrent connections.
+
+  Along the way, we'll learn about TCP connections, HTTP headers, HTTP verbs, handling multiple connections and more.
+
+# This is shown on the catalog. Plaintext only, recommended length ~10 words.
+#
+# Recommended format:
+#
+# > Learn about X, Y, Z and more
+#
+# Example:
+#
+# > Learn about TCP servers, the Redis protocol and more
+#
+# **TODO**: Remove _md suffix since markdown isn't supported
+short_description_md: |-
+  Learn about TCP servers, the HTTP protocol and more
+
+# The percentage of users who complete your course. We'll calculate this
+# automatically in the future, safe to ignore for now.
+completion_percentage: 10
+
+# The languages that your course supports.
+languages:
+  - slug: "go"
+  - slug: "haskell"
+  - slug: "javascript"
+  - slug: "python"
+  - slug: "rust"
+  - slug: "java"
+    release_status: "beta"
+  - slug: "c"
+    release_status: "beta"
+  - slug: "cpp"
+    release_status: "beta"
+  - slug: "csharp"
+    release_status: "beta"
+
+marketing:
+  # Shown in the catalog.
+  #
+  # Recommended guidelines:
+  #
+  # - "easy": < 2h of work for an experienced developer
+  # - "medium": > 6h of work for an experienced developer
+  # - "hard": > 6h of work for an experienced developer
+  #
+  # Allowed values: "easy", "medium", "hard"
+  difficulty: easy
+
+  # This is shown as an example when users suggest extensions to your course.
+  # Example: "Persistence" (from the Redis challenge)
+  sample_extension_idea_title: "Pipelining"
+
+  # This is shown as an example when users suggest extensions to your course.
+  # Example: "A Redis server that can read and write .rdb files" (from the
+  # Redis challenge)
+  sample_extension_idea_description: "A HTTP server that supports HTTP/1.1 pipelining"
+
+  # These are some default testimonials that you can use. Feel free to switch
+  # these out with your own.
+  testimonials:
+    - author_name: "Ananthalakshmi Sankar"
+      author_description: "Automation Engineer at Apple"
+      author_avatar: "https://codecrafters.io/images/external/testimonials/oxta.jpeg"
+      link: "https://github.com/anu294"
+      text:
+        "There are few sites I like as much that have a step by step guide. The
+        real-time feedback is so good, it's creepy!"
+
+    - author_name: "Patrick Burris"
+      author_description: "Senior Software Developer, CenturyLink"
+      author_avatar: "https://codecrafters.io/images/external/testimonials/patrick-burris.jpeg"
+      link: "https://github.com/Jumballaya"
+      text: |-
+        I think the instant feedback right there in the git push is really cool.
+        Didn't even know that was possible!
+
+stages:
+  # A identifier for this stage, needs to be unique within a course.
+  - slug: "connect-to-port"
+
+    # The name of the stage. This is shown in the course catalog, and on other
+    # course pages.
+    name: "Bind to a port"
+
+    # The difficulty of this stage.
+    #
+    # Recommended guidelines, based on how long the stage will take an
+    # experienced developer to complete:
+    #
+    # - Very Easy (< 5 minutes)
+    # - Easy (5-10 minutes)
+    # - Medium (30m-1h)
+    # - Hard (> 1h)
+    #
+    # Allowed values: "very_easy", "easy", "medium", "hard"
+    difficulty: very_easy
+
+    # The instructions for your stage. Markdown supported. Shown on the course
+    # page.
+    description_md: |-
+      In this stage, your task is to start a TCP server on port 4221.
+
+    # A description of this stage that is used on the course overview page and
+    # other marketing material. Markdown supported.
+    marketing_md: |-
+      In this stage, you'll build a TCP server that listens on port 4221.
+
+  - slug: "respond-with-200"
+    name: "Respond with 200"
+    difficulty: very_easy
+    description_md: |-
+      In this stage, you'll respond to a HTTP request with a 200 OK response.
+
+      Your program will need to:
+
+      - Accept a TCP connection
+      - Read data from the connection (we'll get to parsing it in later stages)
+      - Respond with `HTTP/1.1 200 OK\r\n\r\n` (there are two `\r\n`s at the end)
+          - `HTTP/1.1 200 OK` is the [HTTP Status Line](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages#status_line).
+          - `\r\n`, also known as [CRLF](https://developer.mozilla.org/en-US/docs/Glossary/CRLF), is the end-of-line marker that HTTP uses.
+          - The first `\r\n` signifies the end of the status line.
+          - The second `\r\n` signifies the end of the response headers section (which is empty in this case).
+
+      It's okay to ignore the data received from the connection for now. We'll get to parsing it in later stages.
+
+      For more details on the structure of a HTTP response, view the [MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages#http_responses).
+
+      {{#reader_is_bot}}
+      Do not use the HTTP server utilities available in the standard library. Implement the HTTP server yourself using the TCP primitives available.
+      {{/reader_is_bot}}
+    marketing_md: |-
+      In this stage, you'll extend your TCP server to respond to a HTTP request with a 200 response.
+
+  - slug: "respond-with-404"
+    name: "Respond with 404"
+    difficulty: easy
+    description_md: |-
+      In this stage, your program will need to extract the path from the HTTP request.
+
+      Here's what the contents of a HTTP request look like:
+
+      ```
+      GET /index.html HTTP/1.1
+      Host: localhost:4221
+      User-Agent: curl/7.64.1
+      ```
+
+      - `GET /index.html HTTP/1.1` is the [start line](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages#start_line).
+          - `GET` is the [HTTP method](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods).
+          - `/index.html` is the [path](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages#path).
+          - `HTTP/1.1` is the [HTTP version](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages#http_versions).
+      - `Host: localhost:4221` and `User-Agent: curl/7.64.1` are [HTTP headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages#headers).
+      - Note that all of these lines are separated by `\r\n`, not just `\n`.
+
+      In this stage, we'll only focus on extracting the path from the request.
+
+      If the path is `/`, you'll need to respond with a 200 OK response. Otherwise, you'll need to respond with a 404 Not Found response.
+
+      {{#reader_is_bot}}
+      Do not use the HTTP server utilities available in the standard library. Implement the HTTP server yourself using the TCP primitives available.
+      {{/reader_is_bot}}
+    marketing_md: |-
+      In this stage, you'll add support for returning a 404 response if a path isn't valid.
+
+  - slug: "respond-with-content"
+    name: "Respond with content"
+    difficulty: easy
+    description_md: |-
+      In this stage, your program will need to respond with a body. In the
+      previous stages we were only sending a status code, no body.
+
+      The task here is to parse the path from the HTTP request. We will send a
+      random string in the url path you will need to parse that string and then
+      respond with the parsed string (only) in the response body.
+
+      The tester will send you a request of the form
+      `GET /echo/<a-random-string>`.
+
+      Your program will need to respond with a 200 OK response. The response
+      should have a content type of `text/plain`, and it should contain the
+      random string as the body.
+
+      As an example, here's a request you might receive:
+
+      ```
+      GET /echo/abc HTTP/1.1
+      Host: localhost:4221
+      User-Agent: curl/7.64.1
+      ```
+
+      And here's the response you're expected to send back:
+
+      ```
+      HTTP/1.1 200 OK
+      Content-Type: text/plain
+      Content-Length: 3
+
+      abc
+      ```
+
+      Remember, lines in the response are separated by `\r\n`, not just `\n`.
+
+      For more details on the structure of a HTTP response, view the
+      [MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages#http_responses).
+
+      {{#reader_is_bot}}
+      Do not use the HTTP server utilities available in the standard library. Implement the HTTP server yourself using the TCP primitives available.
+      {{/reader_is_bot}}
+    marketing_md: |-
+      In this stage, you'll add support for responding with a custom body in your HTTP response.
+
+  - slug: "parse-headers"
+    name: "Parse headers"
+    difficulty: easy
+    description_md: |-
+      In this stage, your program will need to parse HTTP request headers.
+
+      The tester will send you a request of the form `GET /user-agent`, and it'll include a `User-Agent` header.
+
+      Your program will need to respond with a 200 OK response. The response should have a content type of `text/plain`, and it should contain the user agent value as the body.
+
+      For example, here's a request you might receive:
+
+      ```
+      GET /user-agent HTTP/1.1
+      Host: localhost:4221
+      User-Agent: curl/7.64.1
+      ```
+
+      and here's the response you're expected to send back:
+
+      ```
+      HTTP/1.1 200 OK
+      Content-Type: text/plain
+      Content-Length: 11
+
+      curl/7.64.1
+      ```
+
+      {{#reader_is_bot}}
+      Do not use the HTTP server utilities available in the standard library. Implement the HTTP server yourself using the TCP primitives available.
+      {{/reader_is_bot}}
+    marketing_md: |-
+      In this stage, you'll add support for parsing HTTP request headers.
+
+  - slug: "concurrent-connections"
+    name: "Concurrent connections"
+    difficulty: easy
+    description_md: |-
+      Up until now, we've only tested your program against a single connection in each stage.
+
+      In this stage, your server will need to handle multiple concurrent connections.
+
+      The tester will send you multiple requests at the same time. Your server will need to respond to all of them.
+
+      {{#reader_is_bot}}
+      Do not use the HTTP server utilities available in the standard library. Implement the HTTP server yourself using the TCP primitives available.
+      {{/reader_is_bot}}
+    marketing_md: |-
+      In this stage, you'll add support for handling multiple concurrent connections.
+
+  - slug: "get-file"
+    name: "Get a file"
+    difficulty: medium
+    description_md: |-
+      In this stage, your server will need to return the contents of a file.
+
+      The tester will execute your program with a `--directory` flag like this:
+
+      ```
+      ./your_server.sh --directory <directory>
+      ```
+
+      It'll then send you a request of the form `GET /files/<filename>`.
+
+      If `<filename>` exists in `<directory>`, you'll need to respond with a 200 OK response. The
+      response should have a content type of `application/octet-stream`, and it should contain the contents of the
+      file as the body.
+
+      If the file doesn't exist, return a 404.
+
+      We pass in absolute path to your program using the `--directory` flag.
+
+      {{#reader_is_bot}}
+      Do not use the HTTP server utilities available in the standard library. Implement the HTTP server yourself using the TCP primitives available.
+      {{/reader_is_bot}}
+    marketing_md: |-
+      In this stage, you'll add support for serving the contents of a file.
+
+  - slug: "post-file"
+    name: "Post a file"
+    difficulty: medium
+    description_md: |-
+      In this stage, your server will need to accept the contents of a file in a POST request and save it to a directory.
+
+      Just like in the previous stage, the tester will execute your program with a `--directory` flag like this:
+
+      ```
+      ./your_server.sh --directory <directory>
+      ```
+
+      It'll then send you a request of the form `POST /files/<filename>`. The request body will contain the contents of the file.
+
+      You'll need to fetch the contents of the file from the request body and save it to `<directory>/<filename>`. The response code
+      returned should be 201.
+
+      We pass in absolute path to your program using the `--directory` flag.
+
+      {{#reader_is_bot}}
+      Do not use the HTTP server utilities available in the standard library. Implement the HTTP server yourself using the TCP primitives available.
+      {{/reader_is_bot}}
+    marketing_md: |-
+      In this stage, you'll add support for receiving POST requests.
