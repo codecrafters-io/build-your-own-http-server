@@ -177,3 +177,23 @@
   template_attributes:
     required_executable: "dotnet (8.0)"
     user_editable_file: "src/Server.cs"
+
+- language: ruby
+  file_mappings:
+    - source: starter_templates/README.md
+      target: README.md
+    - source: starter_templates/codecrafters.yml
+      target: codecrafters.yml
+    - source: starter_templates/ruby/app/server.rb
+      target: app/server.rb
+    - source: starter_templates/ruby/your_server.sh
+      target: your_server.sh
+    - source: starter_templates/.gitattributes
+      target: .gitattributes
+    - source: starter_templates/ruby/Gemfile
+      target: Gemfile
+    - source: starter_templates/ruby/Gemfile.lock
+      target: Gemfile.lock
+  template_attributes:
+    required_executable: "ruby (3.3)"
+    user_editable_file: "app/server.rb"

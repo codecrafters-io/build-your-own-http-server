@@ -36,8 +36,8 @@ language_pack: c-9.2
 language_pack: cpp-20
 {{/language_is_cpp}}
 {{# language_is_ruby }}
-# Available versions: ruby-2.7
-language_pack: ruby-2.7
+# Available versions: ruby-3.3
+language_pack: ruby-3.3
 {{/ language_is_ruby }}
 {{# language_is_rust }}
 # Available versions: rust-1.77
