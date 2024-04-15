@@ -5,7 +5,7 @@ Study and uncomment the relevant code:
 ```ruby
 # Uncomment this to pass the first stage
 
-server = TCPServer.new(SERVER_HOST, SERVER_PORT)
+server = TCPServer.new("localhost", 4221)
 client_socket, client_address = server.accept
 ```
 
