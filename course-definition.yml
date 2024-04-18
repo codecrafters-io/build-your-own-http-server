@@ -76,6 +76,8 @@ languages:
     release_status: "beta"
   - slug: "ruby"
     release_status: "alpha"
+  - slug: "typescript"
+    release_status: "beta"
 
 marketing:
   # Shown in the catalog.
