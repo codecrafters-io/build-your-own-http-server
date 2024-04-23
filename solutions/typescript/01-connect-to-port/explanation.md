@@ -9,6 +9,8 @@ for await (const conn of server) {
     conn.closeWrite();
     await conn.closed;
 }
+
+server.close();
 ```
 
 Push your changes to pass the first stage:

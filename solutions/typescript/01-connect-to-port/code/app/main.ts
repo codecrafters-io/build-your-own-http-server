@@ -4,4 +4,4 @@ for await (const conn of server) {
     await conn.closed;
 }
 
-// server.close();
+server.close();
