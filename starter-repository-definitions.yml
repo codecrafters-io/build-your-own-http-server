@@ -206,10 +206,14 @@
       target: codecrafters.yml
     - source: starter_templates/typescript/app/main.ts
       target: app/main.ts
+    - source: starter_templates/typescript/package.json
+      target: package.json
     - source: starter_templates/typescript/your_server.sh
       target: your_server.sh
     - source: starter_templates/.gitattributes
       target: .gitattributes
+    - source: starter_templates/typescript/.gitignore
+      target: .gitignore
   template_attributes:
     required_executable: "deno (1.42)"
     user_editable_file: "app/main.ts"
