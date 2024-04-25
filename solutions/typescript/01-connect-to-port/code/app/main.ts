@@ -1,7 +1,9 @@
-const server = Deno.listen({ port: 4221, hostname: "localhost" });
-for await (const conn of server) {
-    conn.closeWrite();
-    await conn.closed;
-}
+import * as net from 'net';
 
-server.close();
+const server = net.createServer((socket) => {
+    socket.end();
+});
+
+server.listen(4221, 'localhost', () => {
+    console.log('Server is running on port 4221');
+});

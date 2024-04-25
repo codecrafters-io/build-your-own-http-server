@@ -208,6 +208,9 @@
       target: app/main.ts
     - source: starter_templates/typescript/package.json
       target: package.json
+    - source: starter_templates/typescript/bun.lockb
+      target: bun.lockb
+      should_skip_template_evaluation: true
     - source: starter_templates/typescript/your_server.sh
       target: your_server.sh
     - source: starter_templates/.gitattributes
@@ -215,5 +218,5 @@
     - source: starter_templates/typescript/.gitignore
       target: .gitignore
   template_attributes:
-    required_executable: "deno (1.42)"
+    required_executable: "bun (1.1)"
     user_editable_file: "app/main.ts"

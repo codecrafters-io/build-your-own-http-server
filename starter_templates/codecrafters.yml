@@ -77,5 +77,5 @@ language_pack: dotnet-8.0
 {{/language_is_csharp}}
 {{#language_is_typescript}}
 # Available versions: deno-1.42
-language_pack: deno-1.42
+language_pack: bun-1.1
 {{/language_is_typescript}}

@@ -8,4 +8,4 @@ debug: false
 # on Codecrafters.
 #
 # Available versions: deno-1.42
-language_pack: deno-1.42
+language_pack: bun-1.1
