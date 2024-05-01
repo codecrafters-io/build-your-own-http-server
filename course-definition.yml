@@ -167,21 +167,56 @@ stages:
     name: "Respond with 200"
     difficulty: very_easy
     description_md: |-
-      In this stage, you'll respond to a HTTP request with a 200 OK response.
+      In this stage, your server will respond to an HTTP request with a `200` response.
 
-      Your program will need to:
+      ### HTTP response
 
-      - Accept a TCP connection
-      - Read data from the connection (we'll get to parsing it in later stages)
-      - Respond with `HTTP/1.1 200 OK\r\n\r\n` (there are two `\r\n`s at the end)
-          - `HTTP/1.1 200 OK` is the [HTTP Status Line](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages#status_line).
-          - `\r\n`, also known as [CRLF](https://developer.mozilla.org/en-US/docs/Glossary/CRLF), is the end-of-line marker that HTTP uses.
-          - The first `\r\n` signifies the end of the status line.
-          - The second `\r\n` signifies the end of the response headers section (which is empty in this case).
+      An HTTP response is made up of three parts, each separated by a [CRLF](https://developer.mozilla.org/en-US/docs/Glossary/CRLF) (`\r\n`):
+      1.  Status line.
+      2.  Zero or more headers, each ending with a CRLF.
+      3.  Optional message body.
 
-      It's okay to ignore the data received from the connection for now. We'll get to parsing it in later stages.
+      In this stage, your server's response will only contain a status line. Here's the response your server must send:
+      ```javascript
+      HTTP/1.1 200 OK\r\n\r\n
+      ```
 
-      For more details on the structure of a HTTP response, view the [MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages#http_responses).
+      Here's a breakdown of the response:
+      ```javascript
+      // Status line
+      HTTP/1.1  // HTTP version
+      200       // Status code
+      OK        // Optional reason phrase
+      \r\n      // CRLF that marks the end of the status line
+
+      // Headers (empty)
+      \r\n      // CRLF that marks the end of the headers
+
+      // Message body (empty)
+      ```
+
+      ### Tests
+
+      The tester will execute your program like this:
+      ```bash
+      $ ./your_server.sh
+      ```
+
+      The tester will then send an HTTP `GET` request to your server:
+      ```bash
+      $ curl -i http://localhost:4221
+      ```
+
+      Your server must respond to the request with the following response:
+      ```javascript
+      HTTP/1.1 200 OK\r\n\r\n
+      ```
+
+      ### Notes
+
+      - You can ignore the contents of the request. We'll cover parsing requests in later stages.
+      - For more information about HTTP responses, see the [MDN Web Docs on HTTP responses](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages#http_responses) or the [HTTP/1.1 specification](https://datatracker.ietf.org/doc/html/rfc9112#name-message).
+      - This challenge uses HTTP/1.1.
 
       {{#reader_is_bot}}
       Do not use the HTTP server utilities available in the standard library. Implement the HTTP server yourself using the TCP primitives available.
