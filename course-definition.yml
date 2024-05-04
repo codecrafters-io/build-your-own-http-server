@@ -174,7 +174,7 @@ stages:
       An HTTP response is made up of three parts, each separated by a [CRLF](https://developer.mozilla.org/en-US/docs/Glossary/CRLF) (`\r\n`):
       1.  Status line.
       2.  Zero or more headers, each ending with a CRLF.
-      3.  Optional message body.
+      3.  Optional response body.
 
       In this stage, your server's response will only contain a status line. Here's the response your server must send:
       ```javascript
@@ -192,7 +192,7 @@ stages:
       // Headers (empty)
       \r\n      // CRLF that marks the end of the headers
 
-      // Message body (empty)
+      // Response body (empty)
       ```
 
       ### Tests
