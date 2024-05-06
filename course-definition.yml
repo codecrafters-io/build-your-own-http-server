@@ -122,7 +122,14 @@ marketing:
 stages:
   # A identifier for this stage, needs to be unique within a course.
   - slug: "connect-to-port"
-
+    concept_slugs:
+      [
+        "network-protocols",
+        "tcp-overview",
+        "go-tcp-server",
+        "rust-tcp-server",
+        "python-tcp-server",
+      ]
     # The name of the stage. This is shown in the course catalog, and on other
     # course pages.
     name: "Bind to a port"
@@ -164,6 +171,14 @@ stages:
       In this stage, you'll build a TCP server that listens on port 4221.
 
   - slug: "respond-with-200"
+    concept_slugs:
+      [
+        "network-protocols",
+        "tcp-overview",
+        "go-tcp-server",
+        "rust-tcp-server",
+        "python-tcp-server",
+      ]
     name: "Respond with 200"
     difficulty: very_easy
     description_md: |-
@@ -337,6 +352,14 @@ stages:
       In this stage, you'll add support for parsing HTTP request headers.
 
   - slug: "concurrent-connections"
+    concept_slugs:
+      [
+        "network-protocols",
+        "tcp-overview",
+        "go-tcp-server",
+        "rust-tcp-server",
+        "python-tcp-server",
+      ]
     name: "Concurrent connections"
     difficulty: easy
     description_md: |-
