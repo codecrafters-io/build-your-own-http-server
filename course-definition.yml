@@ -172,13 +172,13 @@ stages:
 
   - slug: "respond-with-200"
     concept_slugs:
-    [
-      "network-protocols",
-      "tcp-overview",
-      "go-tcp-server",
-      "rust-tcp-server",
-      "python-tcp-server",
-    ]
+      [
+        "network-protocols",
+        "tcp-overview",
+        "go-tcp-server",
+        "rust-tcp-server",
+        "python-tcp-server",
+      ]
     name: "Respond with 200"
     difficulty: very_easy
     description_md: |-
@@ -240,14 +240,6 @@ stages:
       In this stage, you'll extend your TCP server to respond to a HTTP request with a 200 response.
 
   - slug: "respond-with-404"
-    concept_slugs:
-    [
-      "network-protocols",
-      "tcp-overview",
-      "go-tcp-server",
-      "rust-tcp-server",
-      "python-tcp-server",
-    ]
     name: "Respond with 404"
     difficulty: easy
     description_md: |-
@@ -279,14 +271,6 @@ stages:
       In this stage, you'll add support for returning a 404 response if a path isn't valid.
 
   - slug: "respond-with-content"
-    concept_slugs:
-    [
-      "network-protocols",
-      "tcp-overview",
-      "go-tcp-server",
-      "rust-tcp-server",
-      "python-tcp-server",
-    ]
     name: "Respond with content"
     difficulty: easy
     description_md: |-
@@ -334,14 +318,6 @@ stages:
       In this stage, you'll add support for responding with a custom body in your HTTP response.
 
   - slug: "parse-headers"
-    concept_slugs:
-    [
-      "network-protocols",
-      "tcp-overview",
-      "go-tcp-server",
-      "rust-tcp-server",
-      "python-tcp-server",
-    ]
     name: "Parse headers"
     difficulty: easy
     description_md: |-
@@ -377,13 +353,13 @@ stages:
 
   - slug: "concurrent-connections"
     concept_slugs:
-    [
-      "network-protocols",
-      "tcp-overview",
-      "go-tcp-server",
-      "rust-tcp-server",
-      "python-tcp-server",
-    ]
+      [
+        "network-protocols",
+        "tcp-overview",
+        "go-tcp-server",
+        "rust-tcp-server",
+        "python-tcp-server",
+      ]
     name: "Concurrent connections"
     difficulty: easy
     description_md: |-
@@ -400,14 +376,6 @@ stages:
       In this stage, you'll add support for handling multiple concurrent connections.
 
   - slug: "get-file"
-    concept_slugs:
-    [
-      "network-protocols",
-      "tcp-overview",
-      "go-tcp-server",
-      "rust-tcp-server",
-      "python-tcp-server",
-    ]
     name: "Get a file"
     difficulty: medium
     description_md: |-
@@ -436,14 +404,6 @@ stages:
       In this stage, you'll add support for serving the contents of a file.
 
   - slug: "post-file"
-    concept_slugs:
-    [
-      "network-protocols",
-      "tcp-overview",
-      "go-tcp-server",
-      "rust-tcp-server",
-      "python-tcp-server",
-    ]
     name: "Post a file"
     difficulty: medium
     description_md: |-
