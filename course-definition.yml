@@ -119,6 +119,16 @@ marketing:
         I think the instant feedback right there in the git push is really cool.
         Didn't even know that was possible!
 
+extensions:
+  - slug: "http-compression"
+    name: "HTTP Compression"
+    description_markdown: |
+      In this challenge extension you'll add [compression][http-compression] support to your HTTP server implementation.
+
+      Along the way you'll learn about compression, compression scheme negotiation and more.
+
+      [http-compression]: https://en.wikipedia.org/wiki/HTTP_compression
+
 stages:
   # A identifier for this stage, needs to be unique within a course.
   - slug: "connect-to-port"
@@ -485,3 +495,180 @@ stages:
       {{/reader_is_bot}}
     marketing_md: |-
       In this stage, you'll add support for receiving POST requests.
+
+ # HTTP Compression
+
+  - slug: "compression-content-encoding"
+    primary_extension_slug: "http-compression"
+    name: "Content-Encoding header"
+    difficulty: easy
+    description_md: |
+      Welcome to the HTTP Compression Extension! In this extension, you'll add [Compression](https://en.wikipedia.org/wiki/HTTP_compression) support to your HTTP Server implementation.
+
+      In this stage, you'll add support for the Content-Encoding header based on what the client sends.
+      
+      ### Tests
+
+      The tester will execute your program like this:
+
+      ```bash
+      ./your_server.sh
+      ```
+
+      It'll then send an HTTP `GET` request to the `/echo/<a-random-string>` endpoint. In the request, it'll include an Accept-Encoding header like: `Accept-Encoding: gzip`.
+      As an example, here's a request you might receive:
+
+      ```
+      GET /echo/foo HTTP/1.1
+      Host: localhost:4221
+      User-Agent: curl/7.64.1
+      Accept-Encoding: gzip
+      ```
+
+      Your server must respond with a `200 OK` response. The response should have a `Content-Encoding: gzip` header present. The response body will not be tested in this stage. (We will tackle the actual compression in a later stage)
+      Here's the response you're expected to send back:
+
+      ```
+      HTTP/1.1 200 OK
+      Content-Encoding: gzip
+      Content-Type: text/plain
+      Content-Length: 3
+
+      foo
+      ```
+
+      It'll then send another HTTP `GET` request to the `/echo/<a-random-string>` endpoint. In the request, it'll include an Accept-Encoding header like: `Accept-Encoding: invalid-encoding`.
+      But this time the Accept-Encoding header will be set to an invalid value (i.e. an encoding that your server doesn't support).
+      As an example, here's a request you might receive:
+
+      ```
+      GET /echo/bar HTTP/1.1
+      Host: localhost:4221
+      User-Agent: curl/7.64.1
+      Accept-Encoding: invalid-encoding
+      ```
+
+      Your server must respond with a `200 OK` response. The response should NOT have a `Content-Encoding` header present. The response body will not be tested in this stage.
+      Here's the response you're expected to send back:
+
+      ```
+      HTTP/1.1 200 OK
+      Content-Type: text/plain
+      Content-Length: 3
+
+      bar
+      ```
+
+      ### Notes
+
+      1.  Header names are case-insensitive, i.e. `accept-encoding: gzip` and `Accept-Encoding: gzip` are equivalent. We won't test this explicitly in this challenge, but it's a good practice to lowercase your header names before comparison.
+    marketing_md: |
+      In this stage, you'll add support for reading the `Accept-Encoding` header sent by clients, and respond with `Content-Encoding` header in your response.
+
+  - slug: "compression-multiple-schemes"
+    primary_extension_slug: "http-compression"
+    name: Multiple compression schemes"
+    difficulty: medium
+    description_md: |
+      In this stage, you'll add support for choosing a compression scheme when multiple values are passed in via the `Accept-Encoding` header.
+      
+      ### Tests
+
+      The tester will execute your program like this:
+
+      ```bash
+      ./your_server.sh
+      ```
+
+      It'll then send an HTTP `GET` request to the `/echo/<a-random-string>` endpoint. In the request, it'll include an Accept-Encoding header set to multiple values, like: `Accept-Encoding: encoding-1, gzip, encoding-2'.
+      One of the values in the list will be `gzip`, but the other values will be invalid encoding names.
+      As an example, here's a request you might receive:
+
+      ```
+      GET /echo/foo HTTP/1.1
+      Host: localhost:4221
+      User-Agent: curl/7.64.1
+      Accept-Encoding: encoding-1, gzip, encoding-2
+      ```
+
+      Your server must respond with a `200 OK` response. The response should have a `Content-Encoding: gzip` header present. The response body will not be tested in this stage. (We will tackle the actual compression in a later stage)
+      Here's the response you're expected to send back:
+
+      ```
+      HTTP/1.1 200 OK
+      Content-Encoding: gzip
+      Content-Type: text/plain
+      Content-Length: 3
+
+      foo
+      ```
+
+      It'll then send another HTTP `GET` request to the `/echo/<a-random-string>` endpoint. In the request, it'll include an Accept-Encoding header like: `Accept-Encoding: encoding-1, encoding-2`.
+      But this time the Accept-Encoding header will not contain gzip, it'll only contain invalid values (i.e. encodings that your server doesn't support).
+      As an example, here's a request you might receive:
+
+      ```
+      GET /echo/bar HTTP/1.1
+      Host: localhost:4221
+      User-Agent: curl/7.64.1
+      Accept-Encoding: encoding-1, encoding-2
+      ```
+
+      Your server must respond with a `200 OK` response. The response should NOT have a `Content-Encoding` header present. The response body will not be tested in this stage.
+      Here's the response you're expected to send back:
+
+      ```
+      HTTP/1.1 200 OK
+      Content-Type: text/plain
+      Content-Length: 3
+
+      bar
+      ```
+
+      ### Notes
+
+      1.  Header names are case-insensitive, i.e. `accept-encoding: gzip` and `Accept-Encoding: gzip` are equivalent. We won't test this explicitly in this challenge, but it's a good practice to lowercase your header names before comparison.
+    marketing_md: |
+      In this stage, you'll add support for reading multiple compression values from `Accept-Encoding` header sent by clients, and respond with `Content-Encoding` header in your response.
+
+  - slug: "compression-gzip"
+    primary_extension_slug: "http-compression"
+    name: "Gzip compression"
+    difficulty: medium
+    description_md: |
+      In this stage, you'll add support for returning responses compressed using gzip.
+      
+      ### Tests
+
+      The tester will execute your program like this:
+
+      ```bash
+      ./your_server.sh
+      ```
+
+      It'll then send an HTTP `GET` request to the `/echo/<a-random-string>` endpoint. In the request, it'll include an Accept-Encoding header like: `Accept-Encoding: gzip`.
+      As an example, here's a request you might receive:
+
+      ```
+      GET /echo/foo HTTP/1.1
+      Host: localhost:4221
+      User-Agent: curl/7.64.1
+      Accept-Encoding: gzip
+      ```
+
+      Your server must respond with a `200 OK` response. The response should have a `Content-Encoding: gzip` header present. The response body should be the random string sent in the request, gzip encoded. And the `Content-Length` header should be the length of the gzip encoded data.
+      Here's the response you're expected to send back:
+      If the raw string was `foo`, the hex encoded data would be `gzip-encoded-data`
+      Hex representation of it would be `1f8b08008c643b6602ff4bcbcf07002165738c03000000`
+
+      ```
+      HTTP/1.1 200 OK
+      Content-Encoding: gzip
+      Content-Type: text/plain
+      Content-Length: 23
+
+      gzip-encoded-data
+      ```
+
+    marketing_md: |
+      In this stage, you'll add support for encoding the response body using `gzip`.
