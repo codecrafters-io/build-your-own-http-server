@@ -467,7 +467,7 @@ stages:
       Accept-Encoding: gzip
       ```
 
-      Your server must respond with a `200 OK` response. The response should have a `Content-Encoding: gzip` header present. The response body should be the random string sent in the request. (We will tackle the actual compression in a later stage)
+      Your server must respond with a `200 OK` response. The response should have a `Content-Encoding: gzip` header present. The response body will not be tested in this stage. (We will tackle the actual compression in a later stage)
       Here's the response you're expected to send back:
 
       ```
@@ -490,7 +490,7 @@ stages:
       Accept-Encoding: invalid-encoding
       ```
 
-      Your server must respond with a `200 OK` response. The response should NOT have a `Content-Encoding` header present. The response body should be the random string sent in the request.
+      Your server must respond with a `200 OK` response. The response should NOT have a `Content-Encoding` header present. The response body will not be tested in this stage.
       Here's the response you're expected to send back:
 
       ```
@@ -533,7 +533,7 @@ stages:
       Accept-Encoding: encoding-1, gzip, encoding-2
       ```
 
-      Your server must respond with a `200 OK` response. The response should have a `Content-Encoding: gzip` header present. The response body should be the random string sent in the request. (We will tackle the actual compression in a later stage)
+      Your server must respond with a `200 OK` response. The response should have a `Content-Encoding: gzip` header present. The response body will not be tested in this stage. (We will tackle the actual compression in a later stage)
       Here's the response you're expected to send back:
 
       ```
@@ -556,7 +556,7 @@ stages:
       Accept-Encoding: encoding-1, encoding-2
       ```
 
-      Your server must respond with a `200 OK` response. The response should NOT have a `Content-Encoding` header present. The response body should be the random string sent in the request.
+      Your server must respond with a `200 OK` response. The response should NOT have a `Content-Encoding` header present. The response body will not be tested in this stage.
       Here's the response you're expected to send back:
 
       ```
