@@ -496,7 +496,7 @@ stages:
     marketing_md: |-
       In this stage, you'll add support for receiving POST requests.
 
- # HTTP Compression
+  # HTTP Compression
 
   - slug: "compression-content-encoding"
     primary_extension_slug: "http-compression"
@@ -506,7 +506,7 @@ stages:
       Welcome to the HTTP Compression Extension! In this extension, you'll add [Compression](https://en.wikipedia.org/wiki/HTTP_compression) support to your HTTP Server implementation.
 
       In this stage, you'll add support for the Content-Encoding header based on what the client sends.
-      
+
       ### Tests
 
       The tester will execute your program like this:
@@ -567,11 +567,11 @@ stages:
 
   - slug: "compression-multiple-schemes"
     primary_extension_slug: "http-compression"
-    name: Multiple compression schemes"
+    name: "Multiple compression schemes"
     difficulty: medium
     description_md: |
       In this stage, you'll add support for choosing a compression scheme when multiple values are passed in via the `Accept-Encoding` header.
-      
+
       ### Tests
 
       The tester will execute your program like this:
@@ -637,7 +637,7 @@ stages:
     difficulty: medium
     description_md: |
       In this stage, you'll add support for returning responses compressed using gzip.
-      
+
       ### Tests
 
       The tester will execute your program like this:
