@@ -563,7 +563,7 @@ stages:
 
   # HTTP Compression
 
-  - slug: "compression-content-encoding"
+  - legacy_slug: "compression-content-encoding"
     primary_extension_slug: "http-compression"
     name: "Content-Encoding header"
     difficulty: easy
@@ -630,7 +630,7 @@ stages:
     marketing_md: |
       In this stage, you'll add support for reading the `Accept-Encoding` header sent by clients, and respond with `Content-Encoding` header in your response.
 
-  - slug: "compression-multiple-schemes"
+  - legacy_slug: "compression-multiple-schemes"
     primary_extension_slug: "http-compression"
     name: "Multiple compression schemes"
     difficulty: medium
@@ -696,7 +696,7 @@ stages:
     marketing_md: |
       In this stage, you'll add support for reading multiple compression values from `Accept-Encoding` header sent by clients, and respond with `Content-Encoding` header in your response.
 
-  - slug: "compression-gzip"
+  - legacy_slug: "compression-gzip"
     primary_extension_slug: "http-compression"
     name: "Gzip compression"
     difficulty: medium
