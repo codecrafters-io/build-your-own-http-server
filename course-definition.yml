@@ -131,7 +131,8 @@ extensions:
 
 stages:
   # A identifier for this stage, needs to be unique within a course.
-  - slug: "connect-to-port"
+  - legacy_slug: "connect-to-port"
+    slug: "connect-to-port"
     concept_slugs:
       [
         "network-protocols",
@@ -180,7 +181,8 @@ stages:
     marketing_md: |-
       In this stage, you'll build a TCP server that listens on port 4221.
 
-  - slug: "respond-with-200"
+  - legacy_slug: "respond-with-200"
+    slug: "respond-with-200"
     concept_slugs:
       [
         "network-protocols",
@@ -249,7 +251,8 @@ stages:
     marketing_md: |-
       In this stage, you'll extend your TCP server to respond to a HTTP request with a 200 response.
 
-  - slug: "respond-with-404"
+  - legacy_slug: "respond-with-404"
+    slug: "respond-with-404"
     name: "Extract URL path"
     difficulty: easy
     description_md: |-
@@ -330,7 +333,8 @@ stages:
     marketing_md: |-
       In this stage, you'll add support for returning a 404 response if a path isn't valid.
 
-  - slug: "respond-with-content"
+  - legacy_slug: "respond-with-content"
+    slug: "respond-with-content"
     name: "Respond with body"
     difficulty: easy
     description_md: |-
@@ -398,7 +402,8 @@ stages:
     marketing_md: |-
       In this stage, you'll add support for responding with a custom body in your HTTP response.
 
-  - slug: "parse-headers"
+  - legacy_slug: "parse-headers"
+    slug: "parse-headers"
     name: "Read header"
     difficulty: easy
     description_md: |-
@@ -469,7 +474,8 @@ stages:
     marketing_md: |-
       In this stage, you'll add support for parsing HTTP request headers.
 
-  - slug: "concurrent-connections"
+  - legacy_slug: "concurrent-connections"
+    slug: "concurrent-connections"
     concept_slugs:
       [
         "network-protocols",
@@ -508,7 +514,8 @@ stages:
     marketing_md: |-
       In this stage, you'll add support for handling multiple concurrent connections.
 
-  - slug: "get-file"
+  - legacy_slug: "get-file"
+    slug: "get-file"
     name: "Get a file"
     difficulty: medium
     description_md: |-
@@ -536,7 +543,8 @@ stages:
     marketing_md: |-
       In this stage, you'll add support for serving the contents of a file.
 
-  - slug: "post-file"
+  - legacy_slug: "post-file"
+    slug: "post-file"
     name: "Post a file"
     difficulty: medium
     description_md: |-
@@ -563,7 +571,8 @@ stages:
 
   # HTTP Compression
 
-  - slug: "compression-content-encoding"
+  - legacy_slug: "compression-content-encoding"
+    slug: "compression-content-encoding"
     primary_extension_slug: "http-compression"
     name: "Content-Encoding header"
     difficulty: easy
@@ -630,7 +639,8 @@ stages:
     marketing_md: |
       In this stage, you'll add support for reading the `Accept-Encoding` header sent by clients, and respond with `Content-Encoding` header in your response.
 
-  - slug: "compression-multiple-schemes"
+  - legacy_slug: "compression-multiple-schemes"
+    slug: "compression-multiple-schemes"
     primary_extension_slug: "http-compression"
     name: "Multiple compression schemes"
     difficulty: medium
@@ -696,7 +706,8 @@ stages:
     marketing_md: |
       In this stage, you'll add support for reading multiple compression values from `Accept-Encoding` header sent by clients, and respond with `Content-Encoding` header in your response.
 
-  - slug: "compression-gzip"
+  - legacy_slug: "compression-gzip"
+    slug: "compression-gzip"
     primary_extension_slug: "http-compression"
     name: "Gzip compression"
     difficulty: medium
