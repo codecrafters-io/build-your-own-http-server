@@ -59,6 +59,9 @@ short_description_md: |-
 # automatically in the future, safe to ignore for now.
 completion_percentage: 10
 
+# List of concept slugs associated with this course
+concept_slugs: ["network-protocols", "tcp-overview"]
+
 # The languages that your course supports.
 languages:
   - slug: "go"
