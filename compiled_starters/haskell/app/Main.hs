@@ -24,8 +24,6 @@ main = do
     -- addrInfo <- getAddrInfo Nothing (Just host) (Just port)
     --
     -- serverSocket <- socket (addrFamily $ head addrInfo) Stream defaultProtocol
-    -- -- Set the SO_REUSEADDR option
-    -- setSocketOption serverSocket ReuseAddr 1
     -- bind serverSocket $ addrAddress $ head addrInfo
     -- listen serverSocket 5
     --
