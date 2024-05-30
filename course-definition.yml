@@ -232,7 +232,7 @@ stages:
 
       The tester will then send an HTTP `GET` request to your server:
       ```bash
-      $ curl -i http://localhost:4221
+      $ curl -v http://localhost:4221
       ```
 
       Your server must respond to the request with the following response:
@@ -303,7 +303,7 @@ stages:
 
       First, the tester will send a `GET` request, with a random string as the path:
       ```bash
-      $ curl -i http://localhost:4221/abcdefg
+      $ curl -v http://localhost:4221/abcdefg
       ```
 
       Your server must respond to this request with a `404` response:
@@ -313,7 +313,7 @@ stages:
 
       Then, the tester will send a `GET` request, with the path `/`:
       ```bash
-      $ curl -i http://localhost:4221
+      $ curl -v http://localhost:4221
       ```
 
       Your server must respond to this request with a `200` response:
@@ -381,7 +381,7 @@ stages:
 
       The tester will then send a `GET` request to the `/echo/{str}` endpoint on your server, with some random string.
       ```bash
-      $ curl -i http://localhost:4221/echo/abc
+      $ curl -v http://localhost:4221/echo/abc
       ```
 
       Your server must respond with a `200` response that contains the following parts:
@@ -452,7 +452,7 @@ stages:
 
       The tester will then send a `GET` request to the `/user-agent` endpoint on your server. The request will have a `User-Agent` header.
       ```bash
-      $ curl -i --header "User-Agent: foobar/1.2.3" http://localhost:4221/user-agent
+      $ curl -v --header "User-Agent: foobar/1.2.3" http://localhost:4221/user-agent
       ```
 
       Your server must respond with a `200` response that contains the following parts:
