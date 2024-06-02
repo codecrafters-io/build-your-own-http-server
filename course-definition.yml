@@ -648,8 +648,9 @@ stages:
       ./your_server.sh
       ```
 
-      It'll then send an HTTP `GET` request to the `/echo/<a-random-string>` endpoint. In the request, it'll include an Accept-Encoding header set to multiple values, like: `Accept-Encoding: encoding-1, gzip, encoding-2'.
+      It'll then send an HTTP `GET` request to the `/echo/<a-random-string>` endpoint. In the request, it'll include an Accept-Encoding header set to multiple values, like: `Accept-Encoding: encoding-1, gzip, encoding-2`.
       One of the values in the list will be `gzip`, but the other values will be invalid encoding names.
+
       As an example, here's a request you might receive:
 
       ```
