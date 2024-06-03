@@ -1,6 +1,6 @@
 ![progress-banner](https://codecrafters.io/images/default_progress_banners/http-server.png)
 
-This is a starting point for Go solutions to the
+This is a starting point for Zig solutions to the
 ["Build Your Own HTTP server" Challenge](https://app.codecrafters.io/courses/http-server/overview).
 
 [HTTP](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol) is the

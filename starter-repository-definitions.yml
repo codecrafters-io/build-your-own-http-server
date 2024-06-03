@@ -224,7 +224,7 @@
       target: .gitattributes
     - source: starter_templates/typescript/.gitignore
       target: .gitignore
-  - language: zig
+- language: zig
   file_mappings:
     - source: starter_templates/README.md
       target: README.md
