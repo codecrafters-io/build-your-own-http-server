@@ -224,6 +224,10 @@
       target: .gitattributes
     - source: starter_templates/typescript/.gitignore
       target: .gitignore
+  template_attributes:
+    required_executable: "bun (1.1)"
+    user_editable_file: "app/main.ts"
+
 - language: zig
   file_mappings:
     - source: starter_templates/README.md
@@ -245,6 +249,3 @@
   template_attributes:
     required_executable: "zig (0.12)"
     user_editable_file: "src/main.zig"
-  template_attributes:
-    required_executable: "bun (1.1)"
-    user_editable_file: "app/main.ts"
