@@ -224,6 +224,27 @@
       target: .gitattributes
     - source: starter_templates/typescript/.gitignore
       target: .gitignore
+  - language: zig
+  file_mappings:
+    - source: starter_templates/README.md
+      target: README.md
+    - source: starter_templates/codecrafters.yml
+      target: codecrafters.yml
+    - source: starter_templates/zig/src/main.zig
+      target: src/main.zig
+    - source: starter_templates/zig/spawn_redis_server.sh
+      target: spawn_redis_server.sh
+    - source: starter_templates/zig/.gitignore
+      target: .gitignore
+    - source: starter_templates/zig/build.zig
+      target: build.zig
+    - source: starter_templates/zig/build.zig.zon
+      target: build.zig.zon
+    - source: starter_templates/.gitattributes
+      target: .gitattributes
+  template_attributes:
+    required_executable: "zig (0.12)"
+    user_editable_file: "src/main.zig"
   template_attributes:
     required_executable: "bun (1.1)"
     user_editable_file: "app/main.ts"
