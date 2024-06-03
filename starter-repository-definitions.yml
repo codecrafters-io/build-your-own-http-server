@@ -236,8 +236,8 @@
       target: codecrafters.yml
     - source: starter_templates/zig/src/main.zig
       target: src/main.zig
-    - source: starter_templates/zig/spawn_redis_server.sh
-      target: spawn_redis_server.sh
+    - source: starter_templates/zig/your_server.sh
+      target: your_server.sh
     - source: starter_templates/zig/.gitignore
       target: .gitignore
     - source: starter_templates/zig/build.zig
