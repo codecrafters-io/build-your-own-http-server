@@ -81,6 +81,8 @@ languages:
     release_status: "beta"
   - slug: "typescript"
     release_status: "beta"
+  - slug: "zig"
+    release_status: "beta"
 
 marketing:
   # Shown in the catalog.
