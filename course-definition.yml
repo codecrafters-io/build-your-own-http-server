@@ -514,26 +514,44 @@ stages:
       In this stage, you'll add support for handling multiple concurrent connections.
 
   - slug: "ap6"
-    name: "Get a file"
+    name: "Return a file"
     difficulty: medium
     description_md: |-
-      In this stage, your server will need to return the contents of a file.
+      In this stage, you'll implement the `/files/{filename}` endpoint, which returns a requested file to the client.
 
-      The tester will execute your program with a `--directory` flag like this:
-
+      ### Tests
+      The tester will execute your program with a `--directory` flag. The `--directory` flag specifies the directory where the files are stored, as an absolute path.
       ```
-      ./your_server.sh --directory <directory>
+      $ ./your_server.sh --directory /tmp/
       ```
 
-      It'll then send you a request of the form `GET /files/<filename>`.
+      The tester will then send two `GET` requests to the `/files/{filename}` endpoint on your server.
 
-      If `<filename>` exists in `<directory>`, you'll need to respond with a 200 OK response. The
-      response should have a content type of `application/octet-stream`, and it should contain the contents of the
-      file as the body.
+      #### First request
+      The first request will ask for a file that exists in the files directory:
+      ```
+      $ echo -n 'Hello, World!' > /tmp/foo
+      $ curl -i http://localhost:4221/files/foo
+      ```
 
-      If the file doesn't exist, return a 404.
+      Your server must respond with a `200` response that contains the following parts:
+      -   `Content-Type` header set to `application/octet-stream`.
+      -   `Content-Length` header set to the size of the file, in bytes.
+      -   Response body set to the file contents.
+      ```
+      HTTP/1.1 200 OK\r\nContent-Type: application/octet-stream\r\nContent-Length: 14\r\n\r\nHello, World!
+      ```
 
-      We pass in absolute path to your program using the `--directory` flag.
+      #### Second request
+      The second request will ask for a file that doesn't exist in the files directory:
+      ```
+      $ curl -i http://localhost:4221/files/non_existant_file
+      ```
+
+      Your server must respond with a `404` response:
+      ```
+      HTTP/1.1 404 Not Found\r\n\r\n
+      ```
 
       {{#reader_is_bot}}
       Do not use the HTTP server utilities available in the standard library. Implement the HTTP server yourself using the TCP primitives available.
