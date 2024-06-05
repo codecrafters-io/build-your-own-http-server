@@ -535,9 +535,9 @@ stages:
       ```
 
       Your server must respond with a `200` response that contains the following parts:
-      -   `Content-Type` header set to `application/octet-stream`.
-      -   `Content-Length` header set to the size of the file, in bytes.
-      -   Response body set to the file contents.
+      - `Content-Type` header set to `application/octet-stream`.
+      - `Content-Length` header set to the size of the file, in bytes.
+      - Response body set to the file contents.
       ```
       HTTP/1.1 200 OK\r\nContent-Type: application/octet-stream\r\nContent-Length: 14\r\n\r\nHello, World!
       ```
