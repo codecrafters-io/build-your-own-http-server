@@ -154,6 +154,10 @@
       target: .gitignore
     - source: starter_templates/cpp/src/server.cpp
       target: src/server.cpp
+    - source: starter_templates/cpp/vcpkg.json
+      target: vcpkg.json
+    - source: starter_templates/cpp/vcpkg-configuration.json
+      target: vcpkg-configuration.json
     - source: starter_templates/cpp/CMakeLists.txt
       target: CMakeLists.txt
     - source: starter_templates/cpp/your_server.sh
