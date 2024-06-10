@@ -4,9 +4,13 @@ Study and uncomment the relevant code:
 
 ```typescript
 // Uncomment this to pass the first stage
-server.listen(4221, 'localhost', () => {
-    console.log('Server is running on port 4221');
+const server = net.createServer((socket) => {
+  socket.on("close", () => {
+    socket.end();
+  });
 });
+
+server.listen(4221, "localhost");
 ```
 
 Push your changes to pass the first stage:
