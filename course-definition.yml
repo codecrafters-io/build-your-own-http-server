@@ -682,7 +682,7 @@ stages:
       $ ./your_server.sh
       ```
 
-      The tester will then send two `GET` requests to the `/echo/<str>` endpoint on your server.
+      The tester will then send two `GET` requests to the `/echo/{str}` endpoint on your server.
 
       #### First request
 
