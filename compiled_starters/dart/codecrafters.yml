@@ -1,0 +1,11 @@
+# Set this to true if you want debug logs.
+#
+# These can be VERY verbose, so we suggest turning them off
+# unless you really need them.
+debug: false
+
+# Use this to change the Dart version used to run your code
+# on Codecrafters.
+#
+# Available versions: dart-3.4
+language_pack: dart-3.4
