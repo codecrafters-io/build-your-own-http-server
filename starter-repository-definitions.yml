@@ -188,6 +188,26 @@
     required_executable: "dotnet (8.0)"
     user_editable_file: "src/Server.cs"
 
+- language: dart
+  file_mappings:
+    - source: starter_templates/README.md
+      target: README.md
+    - source: starter_templates/codecrafters.yml
+      target: codecrafters.yml
+    - source: starter_templates/.gitattributes
+      target: .gitattributes
+    - source: starter_templates/dart/.gitignore
+      target: .gitignore
+    - source: starter_templates/dart/pubspec.yaml
+      target: pubspec.yaml
+    - source: starter_templates/dart/bin/main.dart
+      target: bin/main.dart
+    - source: starter_templates/dart/your_server.sh
+      target: your_server.sh
+  template_attributes:
+    required_executable: "dart (3.4)"
+    user_editable_file: "bin/main.dart"
+
 - language: ruby
   file_mappings:
     - source: starter_templates/README.md

@@ -77,6 +77,8 @@ languages:
     release_status: "beta"
   - slug: "csharp"
     release_status: "beta"
+  - slug: "dart"
+    release_status: "beta"
   - slug: "ruby"
     release_status: "beta"
   - slug: "typescript"
