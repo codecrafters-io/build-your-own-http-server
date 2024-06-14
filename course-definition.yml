@@ -727,65 +727,58 @@ stages:
     name: "Multiple compression schemes"
     difficulty: medium
     description_md: |
-      In this stage, you'll add support for choosing a compression scheme when multiple values are passed in via the `Accept-Encoding` header.
+      In this stage, you'll add support for `Accept-Encoding` headers that contain multiple compression schemes.
+
+      ### Multiple compression schemes
+
+      A client can specify that it supports multiple compression schemes by setting `Accept-Encoding` to a comma-separated list:
+      ```
+      Accept-Encoding: encoding-1, encoding-2, encoding-3
+      ```
+
+      For this extension, assume that your server only supports the `gzip` compression scheme.
+
+      For this stage, you don't need to compress the body. You'll implement compression in a later stage.
 
       ### Tests
 
       The tester will execute your program like this:
-
-      ```bash
-      ./your_server.sh
+      ```
+      $ ./your_server.sh
       ```
 
-      It'll then send an HTTP `GET` request to the `/echo/<a-random-string>` endpoint. In the request, it'll include an Accept-Encoding header set to multiple values, like: `Accept-Encoding: encoding-1, gzip, encoding-2`.
-      One of the values in the list will be `gzip`, but the other values will be invalid encoding names.
+      The tester will then send two `GET` requests to the `/echo/{str}` endpoint on your server.
 
-      As an example, here's a request you might receive:
+      #### First request
 
+      For the first request, the `Accept-Encoding` header will contain `gzip`, along with some invalid encodings:
       ```
-      GET /echo/foo HTTP/1.1
-      Host: localhost:4221
-      User-Agent: curl/7.64.1
-      Accept-Encoding: encoding-1, gzip, encoding-2
+      $ curl -v -H "Accept-Encoding: invalid-encoding-1, gzip, invalid-encoding-2" http://localhost:4221/echo/abc
       ```
 
-      Your server must respond with a `200 OK` response. The response should have a `Content-Encoding: gzip` header present. The response body will not be tested in this stage. (We will tackle the actual compression in a later stage)
-      Here's the response you're expected to send back:
-
-      ```
+      Your server's response must contain this header: `Content-Encoding: gzip`.
+      ```javascript
       HTTP/1.1 200 OK
+      Content-Type: text/plain
       Content-Encoding: gzip
-      Content-Type: text/plain
-      Content-Length: 3
 
-      foo
+      // Body omitted.
       ```
 
-      It'll then send another HTTP `GET` request to the `/echo/<a-random-string>` endpoint. In the request, it'll include an Accept-Encoding header like: `Accept-Encoding: encoding-1, encoding-2`.
-      But this time the Accept-Encoding header will not contain gzip, it'll only contain invalid values (i.e. encodings that your server doesn't support).
-      As an example, here's a request you might receive:
+      #### Second request
 
+      For the second request, the `Accept-Encoding` header will only contain invalid encodings:
       ```
-      GET /echo/bar HTTP/1.1
-      Host: localhost:4221
-      User-Agent: curl/7.64.1
-      Accept-Encoding: encoding-1, encoding-2
+      $ curl -v -H "Accept-Encoding: invalid-encoding-1, invalid-encoding-2" http://localhost:4221/echo/abc
       ```
 
-      Your server must respond with a `200 OK` response. The response should NOT have a `Content-Encoding` header present. The response body will not be tested in this stage.
-      Here's the response you're expected to send back:
-
-      ```
+      Your server's response must not contain a `Content-Encoding` header:
+      ```javascript
       HTTP/1.1 200 OK
       Content-Type: text/plain
-      Content-Length: 3
 
-      bar
+      // Body omitted.
       ```
-
-      ### Notes
-
-      1.  Header names are case-insensitive, i.e. `accept-encoding: gzip` and `Accept-Encoding: gzip` are equivalent. We won't test this explicitly in this challenge, but it's a good practice to lowercase your header names before comparison.
     marketing_md: |
       In this stage, you'll add support for reading multiple compression values from `Accept-Encoding` header sent by clients, and respond with `Content-Encoding` header in your response.
 
