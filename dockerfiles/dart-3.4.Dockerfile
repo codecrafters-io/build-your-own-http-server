@@ -13,6 +13,3 @@ RUN dart pub get --offline
 # Set up precompilation script.
 RUN echo "cd \${CODECRAFTERS_SUBMISSION_DIR} && dart compile exe bin/main.dart -o compiled" > /codecrafters-precompile.sh
 RUN chmod +x /codecrafters-precompile.sh
-
-# Expose server.
-# EXPOSE 4221
