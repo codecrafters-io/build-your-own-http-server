@@ -31,7 +31,7 @@ Time to move on to the next stage!
 
 Note: This section is for stages 2 and beyond.
 
-1. Ensure you have `Dart (3.4)` installed locally
+1. Ensure you have `dart (3.4)` installed locally
 1. Run `./your_server.sh` to run your program, which is implemented in
    `bin/main.dart`.
 1. Commit your changes and run `git push origin master` to submit your solution
