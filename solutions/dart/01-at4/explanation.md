@@ -4,10 +4,10 @@ Study and uncomment the relevant code:
 
 ```dart
 // Uncomment this to pass the first stage
-var server = await HttpServer.bind(InternetAddress.anyIPv6, 4221);
-await server.forEach((HttpRequest request) {
-  request.response.close();
-});
+var serverSocket = await ServerSocket.bind('0.0.0.0', 4221);
+await for (var clientSocket in serverSocket) {
+  print("Client connected");
+}
 ```
 
 Push your changes to pass the first stage:
