@@ -13,7 +13,7 @@ COPY --exclude=.git --exclude=README.md . /app
 RUN dart pub get
 
 # Set up precompilation script.
-RUN echo "cd \${CODECRAFTERS_SUBMISSION_DIR} && dart compile exe bin/main.dart -o compiled && printf '#!/bin/sh\nexec \${CODECRAFTERS_SUBMISSION_DIR}/compiled \"\$@\"\n' > your_server.sh" > /codecrafters-precompile.sh
+RUN printf "cd \${CODECRAFTERS_SUBMISSION_DIR} && dart compile exe bin/main.dart -o compiled && printf '#!/bin/sh\nexec \${CODECRAFTERS_SUBMISSION_DIR}/compiled \"\$@\"\n' > your_server.sh" > /codecrafters-precompile.sh
 RUN chmod +x /codecrafters-precompile.sh
 
 ENV CODECRAFTERS_DEPENDENCY_FILE_PATHS="vcpkg.json,vcpkg-configuration.json"
