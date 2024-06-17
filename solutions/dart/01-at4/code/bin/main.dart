@@ -1,8 +1,8 @@
 import 'dart:io';
 
 void main() async {
-  var server = await HttpServer.bind(InternetAddress.anyIPv6, 4221);
-  await server.forEach((HttpRequest request) {
-    request.response.close();
-  });
+  var serverSocket = await ServerSocket.bind('0.0.0.0', 4221);
+  await for (var clientSocket in serverSocket) {
+    print("Client connected");
+  }
 }
