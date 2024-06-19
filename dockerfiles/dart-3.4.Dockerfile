@@ -2,7 +2,7 @@
 FROM dart:3.4
 
 # Rebuild if these files change
-ENV CODECRAFTERS_DEPENDENCY_FILE_PATHS="pubspec.yaml"
+ENV CODECRAFTERS_DEPENDENCY_FILE_PATHS="pubspec.yaml,pubspec.lock"
 
 WORKDIR /app
 
