@@ -64,25 +64,20 @@ concept_slugs: ["network-protocols", "tcp-overview"]
 
 # The languages that your course supports.
 languages:
+  - slug: "c"
+  - slug: "cpp"
+  - slug: "csharp"
   - slug: "go"
   - slug: "haskell"
-  - slug: "javascript"
-  - slug: "python"
-  - slug: "rust"
   - slug: "java"
-    release_status: "beta"
-  - slug: "c"
-    release_status: "beta"
-  - slug: "cpp"
-    release_status: "beta"
-  - slug: "csharp"
-    release_status: "beta"
+  - slug: "javascript"
+  - slug: "kotlin"
+    release_status: "alpha"
+  - slug: "python"
   - slug: "ruby"
-    release_status: "beta"
+  - slug: "rust"
   - slug: "typescript"
-    release_status: "beta"
   - slug: "zig"
-    release_status: "beta"
 
 marketing:
   # Shown in the catalog.
