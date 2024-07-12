@@ -72,7 +72,6 @@ languages:
   - slug: "java"
   - slug: "javascript"
   - slug: "kotlin"
-    release_status: "alpha"
   - slug: "python"
   - slug: "ruby"
   - slug: "rust"
