@@ -9,15 +9,14 @@ public class Main {
 
     // Uncomment this block to pass the first stage
     //
-    // ServerSocket serverSocket = null;
-    // Socket clientSocket = null;
-    //
     // try {
-    //   serverSocket = new ServerSocket(4221);
+    //   ServerSocket serverSocket = new ServerSocket(4221);
+    //
     //   // Since the tester restarts your program quite often, setting SO_REUSEADDR
     //   // ensures that we don't run into 'Address already in use' errors
     //   serverSocket.setReuseAddress(true);
-    //   clientSocket = serverSocket.accept(); // Wait for connection from client.
+    //
+    //   serverSocket.accept(); // Wait for connection from client.
     //   System.out.println("accepted new connection");
     // } catch (IOException e) {
     //   System.out.println("IOException: " + e.getMessage());
