@@ -8,4 +8,4 @@
 
 set -e # Exit on failure
 
-exec /tmp/codecrafters-build/codecrafters-build-http-server-csharp "$@"
+exec /tmp/codecrafters-build-http-server-csharp/codecrafters-http-server "$@"

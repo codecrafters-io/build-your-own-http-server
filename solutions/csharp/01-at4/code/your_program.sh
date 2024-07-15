@@ -18,4 +18,4 @@ dotnet build --configuration Release --output /tmp/codecrafters-build-http-serve
 #
 # - Edit this to change how your program runs locally
 # - Edit .codecrafters/run.sh to change how your program runs remotely
-exec /tmp/codecrafters-build/codecrafters-build-http-server-csharp "$@"
+exec /tmp/codecrafters-build-http-server-csharp/codecrafters-http-server "$@"
