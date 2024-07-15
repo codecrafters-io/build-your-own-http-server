@@ -12,10 +12,10 @@ set -e # Exit early if any commands fail
 #
 # - Edit this to change how your program compiles locally
 # - Edit .codecrafters/compile.sh to change how your program compiles remotely
-mvn -B package -Ddir=/tmp/codecrafters-build-dir
+mvn -B package -Ddir=/tmp/codecrafters-build-http-server-kotlin
 
 # Copied from .codecrafters/run.sh
 #
 # - Edit this to change how your program runs locally
 # - Edit .codecrafters/run.sh to change how your program runs remotely
-exec java -jar /tmp/codecrafters-build-dir/build-your-own-http-server.jar "$@"
+exec java -jar /tmp/codecrafters-build-http-server-kotlin/build-your-own-http-server.jar "$@"

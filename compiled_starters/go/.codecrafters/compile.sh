@@ -8,4 +8,4 @@
 
 set -e # Exit on failure
 
-go build -o /tmp/codecrafters-go-build-target app/*.go
+go build -o /tmp/codecrafters-build-http-server-go app/*.go

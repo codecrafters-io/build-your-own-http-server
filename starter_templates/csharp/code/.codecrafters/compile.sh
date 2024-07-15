@@ -8,4 +8,4 @@
 
 set -e # Exit on failure
 
-dotnet build --configuration Release --output /tmp/codecrafters-build codecrafters-http-server.csproj
+dotnet build --configuration Release --output /tmp/codecrafters-build-http-server-csharp codecrafters-http-server.csproj

@@ -8,4 +8,4 @@
 
 set -e # Exit on failure
 
-gcc -lcurl -lz -o /tmp/http-server-target app/*.c
+gcc -lcurl -lz -o /tmp/codecrafters-build-http-server-c app/*.c

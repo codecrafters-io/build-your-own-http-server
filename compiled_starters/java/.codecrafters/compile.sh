@@ -8,4 +8,4 @@
 
 set -e # Exit on failure
 
-mvn -B package -Ddir=/tmp/codecrafters-http-server-java-target
+mvn -B package -Ddir=/tmp/codecrafters-build-http-server-java
