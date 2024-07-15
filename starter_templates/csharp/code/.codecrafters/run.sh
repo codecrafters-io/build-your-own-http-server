@@ -8,4 +8,4 @@
 
 set -e # Exit on failure
 
-exec dotnet run --project . --configuration Release -- "$@"
+exec /tmp/codecrafters-build/codecrafters-http-server "$@"
