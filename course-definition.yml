@@ -169,7 +169,7 @@ stages:
       The tester will execute your program like this:
 
       ```
-      $ ./your_server.sh
+      $ ./your_program.sh
       ```
 
       Then, the tester will try to connect to your server on port 4221. The connection must succeed for you to pass this stage.
@@ -223,7 +223,7 @@ stages:
 
       The tester will execute your program like this:
       ```bash
-      $ ./your_server.sh
+      $ ./your_program.sh
       ```
 
       The tester will then send an HTTP `GET` request to your server:
@@ -292,7 +292,7 @@ stages:
 
       The tester will execute your program like this:
       ```bash
-      $ ./your_server.sh
+      $ ./your_program.sh
       ```
 
       The tester will then send two HTTP requests to your server.
@@ -372,7 +372,7 @@ stages:
 
       The tester will execute your program like this:
       ```bash
-      $ ./your_server.sh
+      $ ./your_program.sh
       ```
 
       The tester will then send a `GET` request to the `/echo/{str}` endpoint on your server, with some random string.
@@ -443,7 +443,7 @@ stages:
 
       The tester will execute your program like this:
       ```bash
-      $ ./your_server.sh
+      $ ./your_program.sh
       ```
 
       The tester will then send a `GET` request to the `/user-agent` endpoint on your server. The request will have a `User-Agent` header.
@@ -502,7 +502,7 @@ stages:
 
       The tester will execute your program like this:
       ```bash
-      $ ./your_server.sh
+      $ ./your_program.sh
       ```
 
       Then, the tester will create multiple concurrent TCP connections to your server. (The exact number of connections is determined at random.) After that, the tester will send a single `GET` request through each of the connections.
@@ -532,7 +532,7 @@ stages:
       ### Tests
       The tester will execute your program with a `--directory` flag. The `--directory` flag specifies the directory where the files are stored, as an absolute path.
       ```
-      $ ./your_server.sh --directory /tmp/
+      $ ./your_program.sh --directory /tmp/
       ```
 
       The tester will then send two `GET` requests to the `/files/{filename}` endpoint on your server.
@@ -601,7 +601,7 @@ stages:
 
       The tester will execute your program with a `--directory` flag. The `--directory` flag specifies the directory to create the file in, as an absolute path.
       ```
-      $ ./your_server.sh --directory /tmp/
+      $ ./your_program.sh --directory /tmp/
       ```
 
       The tester will then send a `POST` request to the `/files/{filename}` endpoint on your server, with the following parts:
@@ -673,7 +673,7 @@ stages:
 
       The tester will execute your program like this:
       ```
-      $ ./your_server.sh
+      $ ./your_program.sh
       ```
 
       The tester will then send two `GET` requests to the `/echo/{str}` endpoint on your server.
@@ -738,7 +738,7 @@ stages:
 
       The tester will execute your program like this:
       ```
-      $ ./your_server.sh
+      $ ./your_program.sh
       ```
 
       The tester will then send two `GET` requests to the `/echo/{str}` endpoint on your server.
@@ -787,7 +787,7 @@ stages:
 
       The tester will execute your program like this:
       ```
-      $ ./your_server.sh
+      $ ./your_program.sh
       ```
 
       Then, the tester will send a `GET` request to the `/echo/{str}` endpoint on your server. The request will contain an `Accept-Encoding` header that includes `gzip`.

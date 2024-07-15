@@ -18,4 +18,4 @@ zig build
 #
 # - Edit this to change how your program runs locally
 # - Edit .codecrafters/run.sh to change how your program runs remotely
-exec zig-out/bin/http-server-starter-zig "$@"
+exec zig-out/bin/zig "$@"
