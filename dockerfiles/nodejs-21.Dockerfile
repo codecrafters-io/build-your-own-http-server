@@ -1,3 +1,4 @@
+# syntax=docker/dockerfile:1.7-labs
 FROM node:21.7-alpine3.19
 
 # Re-build image if any of these files change

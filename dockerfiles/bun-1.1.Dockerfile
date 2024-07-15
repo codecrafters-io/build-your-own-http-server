@@ -1,3 +1,4 @@
+# syntax=docker/dockerfile:1.7-labs
 FROM oven/bun:1.1.4-alpine
 
 # Re-build image if any of these files change

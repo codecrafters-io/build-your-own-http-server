@@ -4,7 +4,7 @@ FROM gcc:13.2.0-bookworm
 ENV CODECRAFTERS_DEPENDENCY_FILE_PATHS="vcpkg.json,vcpkg-configuration.json"
 
 RUN apt-get update && \
-    apt-get install --no-install-recommends -y zip=3.* && \ 
+    apt-get install --no-install-recommends -y zip=3.* && \
     apt-get install --no-install-recommends -y g++=4:* && \
     apt-get install --no-install-recommends -y build-essential=12.* && \
     apt-get clean && \
