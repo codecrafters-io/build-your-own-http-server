@@ -14,7 +14,7 @@ Along the way you'll learn about TCP servers, [HTTP request syntax](https://www.
 
 The entry point for your HTTP server implementation is in `{{ user_editable_file }}`. Study and uncomment the relevant code, and push your changes to pass the first stage:
 
-``` sh
+```sh
 git add .
 git commit -m "pass 1st stage" # any msg
 git push origin master
@@ -27,7 +27,7 @@ Time to move on to the next stage!
 Note: This section is for stages 2 and beyond.
 
 1. Ensure you have `{{ required_executable }}` installed locally
-1. Run `./your_server.sh` to run your program, which is implemented in
+1. Run `./your_program.sh` to run your program, which is implemented in
    `{{ user_editable_file }}`.{{# language_is_rust }} This command compiles your
    Rust project, so it might be slow the first time you run it. Subsequent runs
    will be fast.{{/ language_is_rust}}

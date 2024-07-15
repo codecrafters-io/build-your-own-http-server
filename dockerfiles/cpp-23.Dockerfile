@@ -4,7 +4,7 @@ FROM gcc:13.2.0-bookworm
 ENV CODECRAFTERS_DEPENDENCY_FILE_PATHS="vcpkg.json,vcpkg-configuration.json"
 
 RUN apt-get update && \
-    apt-get install --no-install-recommends -y zip=3.* && \ 
+    apt-get install --no-install-recommends -y zip=3.* && \
     apt-get install --no-install-recommends -y g++=4:* && \
     apt-get install --no-install-recommends -y build-essential=12.* && \
     apt-get clean && \
@@ -36,7 +36,7 @@ RUN mkdir -p /app-cached/build
 RUN if [ -d "/app/build" ]; then mv /app/build /app-cached; fi
 RUN if [ -d "/app/vcpkg_installed" ]; then mv /app/vcpkg_installed /app-cached/build; fi
 
-RUN echo "cd \${CODECRAFTERS_SUBMISSION_DIR} && cmake -B build -S . -DCMAKE_TOOLCHAIN_FILE=${VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake && cmake --build ./build && sed -i '/^cmake/ s/^/# /' ./your_server.sh" > /codecrafters-precompile.sh
+RUN echo "cd \${CODECRAFTERS_SUBMISSION_DIR} && cmake -B build -S . -DCMAKE_TOOLCHAIN_FILE=${VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake && cmake --build ./build && sed -i '/^cmake/ s/^/# /' ./your_program.sh" > /codecrafters-precompile.sh
 RUN chmod +x /codecrafters-precompile.sh
 
 # Once the heavy steps are done, we can copy all files back
