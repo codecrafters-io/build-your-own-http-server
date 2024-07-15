@@ -3,10 +3,10 @@ FROM oven/bun:1.1.4-alpine
 # Re-build image if any of these files change
 ENV CODECRAFTERS_DEPENDENCY_FILE_PATHS="package.json,bun.lockb"
 
+WORKDIR /app
+
 # .git & README.md are unique per-repository. We ignore them on first copy to prevent cache misses
 COPY --exclude=.git --exclude=README.md . /app
-
-WORKDIR /app
 
 # For reproducible builds.
 # This will install the exact versions of each package specified in the lockfile.
