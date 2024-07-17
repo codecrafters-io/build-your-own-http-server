@@ -1,0 +1,3 @@
+attributes:
+  required_executable: "dart (3.4)"
+  user_editable_file: "bin/main.dart"
