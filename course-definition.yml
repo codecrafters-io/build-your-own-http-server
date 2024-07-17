@@ -77,6 +77,9 @@ languages:
   - slug: "rust"
   - slug: "typescript"
   - slug: "zig"
+  - slug: "dart"
+    release_status: "alpha"
+    alpha_tester_usernames: ["DanTup"]
 
 marketing:
   # Shown in the catalog.

@@ -1,0 +1,5 @@
+name: my_http_server
+version: 0.1.0
+
+environment:
+  sdk: '^3.4.0'
