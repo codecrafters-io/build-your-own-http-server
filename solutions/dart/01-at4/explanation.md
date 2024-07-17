@@ -4,7 +4,9 @@ Study and uncomment the relevant code:
 
 ```dart
 // Uncomment this to pass the first stage
+
 var serverSocket = await ServerSocket.bind('0.0.0.0', 4221);
+
 await for (var clientSocket in serverSocket) {
   print("Client connected");
 }
