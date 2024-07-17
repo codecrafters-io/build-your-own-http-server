@@ -12,7 +12,10 @@ set -e # Exit early if any commands fail
 #
 # - Edit this to change how your program compiles locally
 # - Edit .codecrafters/compile.sh to change how your program compiles remotely
-mvn -B package -Ddir=/tmp/codecrafters-build-http-server-kotlin
+(
+  cd "$(dirname "$0")" # Ensure compile steps are run within the repository directory
+  mvn -B package -Ddir=/tmp/codecrafters-build-http-server-kotlin
+)
 
 # Copied from .codecrafters/run.sh
 #

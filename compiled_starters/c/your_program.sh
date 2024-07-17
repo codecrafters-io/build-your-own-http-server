@@ -12,7 +12,10 @@ set -e # Exit early if any commands fail
 #
 # - Edit this to change how your program compiles locally
 # - Edit .codecrafters/compile.sh to change how your program compiles remotely
-gcc -lcurl -lz -o /tmp/codecrafters-build-http-server-c app/*.c
+(
+  cd "$(dirname "$0")" # Ensure compile steps are run within the repository directory
+  gcc -lcurl -lz -o /tmp/codecrafters-build-http-server-c app/*.c
+)
 
 # Copied from .codecrafters/run.sh
 #
