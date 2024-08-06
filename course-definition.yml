@@ -68,6 +68,7 @@ languages:
   - slug: "cpp"
   - slug: "csharp"
   - slug: "dart"
+  - slug: "gleam"
   - slug: "go"
   - slug: "haskell"
   - slug: "java"
