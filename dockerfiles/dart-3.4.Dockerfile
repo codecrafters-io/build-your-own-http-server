@@ -11,6 +11,3 @@ COPY --exclude=.git --exclude=README.md . /app
 
 # Download dependencies
 RUN dart pub get
-
-# Once the heavy steps are done, we can copy all files back
-COPY . /app
