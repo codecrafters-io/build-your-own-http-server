@@ -18,7 +18,7 @@ RUN rm /app/src/Program.cs
 RUN rm -rf /app/obj
 RUN rm -rf /app/bin
 
-RUN echo "cd \${CODECRAFTERS_SUBMISSION_DIR} && dotnet build --configuration Release ." > /codecrafters-precompile.sh
+RUN echo "cd \${CODECRAFTERS_REPOSITORY_DIR} && dotnet build --configuration Release ." > /codecrafters-precompile.sh
 RUN chmod +x /codecrafters-precompile.sh
 
 ENV CODECRAFTERS_DEPENDENCY_FILE_PATHS="codecrafters-http-server.csproj,codecrafters-http-server.sln"
