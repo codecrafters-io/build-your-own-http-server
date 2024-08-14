@@ -17,5 +17,5 @@ RUN echo "@community http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /et
 # Update the package list and install Zig
 RUN apk add --no-cache zig@community=0.12.0-r0
 
-RUN printf "set -e \ncd \${CODECRAFTERS_SUBMISSION_DIR} \necho 'Running zig build' \nzig build \necho 'zig build completed.' \n" > /codecrafters-precompile.sh
+RUN printf "set -e \ncd \${CODECRAFTERS_REPOSITORY_DIR} \necho 'Running zig build' \nzig build \necho 'zig build completed.' \n" > /codecrafters-precompile.sh
 RUN chmod +x /codecrafters-precompile.sh
