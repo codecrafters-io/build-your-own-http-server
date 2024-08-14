@@ -15,6 +15,3 @@ RUN npm ci
 # If the node_modules directory exists, move it to /app-cached
 RUN mkdir -p /app-cached
 RUN if [ -d "/app/node_modules" ]; then mv /app/node_modules /app-cached; fi
-
-# Once the heavy steps are done, we can copy all files back
-COPY . /app

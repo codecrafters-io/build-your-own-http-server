@@ -15,7 +15,3 @@ RUN dotnet build --configuration Release .
 # Legacy support, remove in the next version of this dockerfile
 RUN echo "cd \${CODECRAFTERS_SUBMISSION_DIR} && dotnet build --configuration Release ." > /codecrafters-precompile.sh
 RUN chmod +x /codecrafters-precompile.sh
-
-# Once the heavy steps are done, we can copy all files back
-COPY . /app
-
