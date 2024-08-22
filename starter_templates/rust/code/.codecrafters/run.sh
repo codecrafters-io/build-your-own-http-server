@@ -6,6 +6,4 @@
 #
 # Learn more: https://codecrafters.io/program-interface
 
-set -e # Exit on failure
-
-exec /tmp/codecrafters-http-server-target/release/http-server-starter-rust "$@"
+exec /tmp/codecrafters-build-http-server-rust/release/codecrafters-http-server "$@"
