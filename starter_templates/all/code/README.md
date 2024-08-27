@@ -15,8 +15,7 @@ Along the way you'll learn about TCP servers, [HTTP request syntax](https://www.
 The entry point for your HTTP server implementation is in `{{ user_editable_file }}`. Study and uncomment the relevant code, and push your changes to pass the first stage:
 
 ```sh
-git add .
-git commit -m "pass 1st stage" # any msg
+git commit -am "pass 1st stage" # any msg
 git push origin master
 ```
 
