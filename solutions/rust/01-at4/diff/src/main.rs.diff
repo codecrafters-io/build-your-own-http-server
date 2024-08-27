@@ -1,7 +1,5 @@
-@@ -1,22 +1,16 @@
--// Uncomment this block to pass the first stage
--// use std::net::TcpListener;
-+use std::net::TcpListener;
+@@ -1,21 +1,16 @@
+ use std::net::TcpListener;
 
  fn main() {
 -    // You can use print statements as follows for debugging, they'll be visible when running tests.
