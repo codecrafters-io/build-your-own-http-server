@@ -1,4 +1,3 @@
-java_http.jar
-target/*
+*.jar
 target/
 .idea/
