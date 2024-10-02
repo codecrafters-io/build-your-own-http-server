@@ -1,7 +1,6 @@
 # syntax=docker/dockerfile:1.7-labs
-FROM oven/bun:1.1.4-alpine
+FROM oven/bun:1.1-alpine
 
-# Re-build image if any of these files change
 ENV CODECRAFTERS_DEPENDENCY_FILE_PATHS="package.json,bun.lockb"
 
 WORKDIR /app
