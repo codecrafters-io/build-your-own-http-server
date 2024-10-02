@@ -1,14 +1,11 @@
 {
-  "name": "@codecrafters/build-your-own-http-server",
-  "description": "Build your own HTTP Server challenge, from CodeCrafters",
+  "name": "@codecrafters/http-server",
+  "description": "Build your own HTTP server challenge, from CodeCrafters",
   "type": "module",
   "scripts": {
     "dev": "bun run app/main.ts"
   },
-  "dependencies": {
-    "async": "^3.2.0"
-  },
   "devDependencies": {
-    "@types/node": "^20.12.11"
+    "@types/bun": "latest"
   }
 }
