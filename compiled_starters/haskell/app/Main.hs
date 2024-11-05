@@ -5,11 +5,13 @@ module Main (main) where
 import Control.Monad (forever)
 import qualified Data.ByteString.Char8 as BC
 import Network.Socket
-import System.IO (BufferMode (..), hSetBuffering, stdout)
+import System.IO (BufferMode (NoBuffering), hSetBuffering, stdout, stderr)
 
 main :: IO ()
 main = do
-    hSetBuffering stdout LineBuffering
+    -- Disable output buffering
+    hSetBuffering stdout NoBuffering
+    hSetBuffering stderr NoBuffering
 
     -- You can use print statements as follows for debugging, they'll be visible when running tests.
     BC.putStrLn "Logs from your program will appear here"
