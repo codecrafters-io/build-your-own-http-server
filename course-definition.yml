@@ -552,7 +552,7 @@ stages:
       - `Content-Length` header set to the size of the file, in bytes.
       - Response body set to the file contents.
       ```
-      HTTP/1.1 200 OK\r\nContent-Type: application/octet-stream\r\nContent-Length: 14\r\n\r\nHello, World!
+      HTTP/1.1 200 OK\r\nContent-Type: application/octet-stream\r\nContent-Length: 13\r\n\r\nHello, World!
       ```
 
       #### Second request
