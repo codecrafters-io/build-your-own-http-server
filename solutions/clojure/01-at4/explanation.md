@@ -4,14 +4,14 @@ Study and uncomment the relevant code:
 
 ```clojure
 ;;   Uncomment this block to pass the first stage
-  (try
-    (let [server-socket (java.net.ServerSocket. 4221)]
-      (doto server-socket
-        (.setReuseAddress true)
-        (.accept))
-      (println "accepted new connection"))
-    (catch java.io.IOException e
-      (println (str "IOException: " (.getMessage e)))))
+(try
+  (with-open [server-socket (java.net.ServerSocket. 4221)]
+    (doto server-socket
+      (.setReuseAddress true)
+      (.accept))
+    (println "accepted new connection"))
+  (catch java.io.IOException e
+    (println (str "IOException: " (.getMessage e)))))
 ```
 
 Push your changes to pass the first stage:
