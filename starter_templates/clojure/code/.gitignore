@@ -1,0 +1,10 @@
+*.jar
+target/
+.idea/
+.clj-kondo/
+.lsp/
+.nrepl-port
+*.class
+/lib/
+/classes/
+.cpcache/

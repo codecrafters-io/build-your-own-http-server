@@ -1,0 +1,3 @@
+attributes:
+  required_executable: clj (1.12.0)
+  user_editable_file: src/main.clj
