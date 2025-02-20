@@ -1,4 +1,4 @@
-The entry point for your HTTP server implementation is in `app/server.c`.
+The entry point for your HTTP server implementation is in `src/main.c`.
 
 Study and uncomment the relevant code: 
 
