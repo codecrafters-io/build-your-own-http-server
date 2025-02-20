@@ -8,4 +8,4 @@
 
 set -e # Exit on failure
 
-exec /tmp/codecrafters-build-http-server-c "$@"
+exec $(dirname $0)/build/http-server "$@"
