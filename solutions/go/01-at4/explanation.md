@@ -1,4 +1,4 @@
-The entry point for your HTTP server implementation is in `app/server.go`.
+The entry point for your HTTP server implementation is in `app/main.go`.
 
 Study and uncomment the relevant code: 
 
