@@ -824,7 +824,7 @@ stages:
       In this stage, you'll add support for encoding the response body using `gzip`.
 
   - slug: "ag9"
-    name: "Connection persistence"
+    name: "Persistent connection"
     difficulty: medium
     description_md: |-
       In this stage, you'll add support for persistent HTTP connections. By default, HTTP/1.1 connections are persistent, meaning the same TCP connection can be reused for multiple requests.
@@ -854,7 +854,7 @@ stages:
     marketing_md: |-
       In this stage, you'll add support for persistent HTTP connections, allowing multiple requests to be handled over the same TCP connection.
 
-  - slug: "pe2"
+  - slug: "ul1"
     name: "Multiple persistent connections"
     difficulty: medium
     description_md: |-
@@ -886,7 +886,7 @@ stages:
     marketing_md: |-
       In this stage, you'll add support for handling multiple concurrent persistent connections.
 
-  - slug: "pe3"
+  - slug: "kh7"
     name: "Connection closure"
     difficulty: medium
     description_md: |-
