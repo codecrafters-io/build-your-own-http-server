@@ -822,3 +822,100 @@ stages:
       - It's normal for a very short string like `abc` to increase in size when compressed.
     marketing_md: |
       In this stage, you'll add support for encoding the response body using `gzip`.
+
+  - slug: "ag9"
+    name: "Connection persistence"
+    difficulty: medium
+    description_md: |-
+      In this stage, you'll add support for persistent HTTP connections. By default, HTTP/1.1 connections are persistent, meaning the same TCP connection can be reused for multiple requests.
+
+      ### Tests
+
+      The tester will execute your program like this:
+      ```bash
+      $ ./your_program.sh
+      ```
+
+      The tester will then send two sequential requests over the same connection:
+      ```bash
+      $ curl --http1.1 -v http://localhost:4221/echo/banana --next http://localhost:4221/user-agent -H "User-Agent: blueberry/apple-blueberry"
+      ```
+
+      Your server must:
+      1. Keep the TCP connection open after the first request
+      2. Handle any subsequent requests on the same connection
+      3. Return appropriate responses for both requests
+
+      ### Notes
+      - In HTTP/1.1, connections are persistent by default unless the client sends a `Connection: close` header
+      - Each request must be processed independently, even if they're on the same connection
+      - The server should not close the connection after each request
+
+    marketing_md: |-
+      In this stage, you'll add support for persistent HTTP connections, allowing multiple requests to be handled over the same TCP connection.
+
+  - slug: "pe2"
+    name: "Multiple persistent connections"
+    difficulty: medium
+    description_md: |-
+      In this stage, you'll extend your server to handle multiple concurrent persistent connections.
+
+      ### Tests
+
+      The tester will execute your program like this:
+      ```bash
+      $ ./your_program.sh
+      ```
+
+      The tester will create two persistent connections and send multiple requests on each:
+      ```bash
+      $ curl --http1.1 -v http://localhost:4221/user-agent -H "User-Agent: orange/mango-grape" --next http://localhost:4221/echo/apple
+      ```
+
+      Your server must:
+      1. Handle multiple concurrent TCP connections
+      2. Keep each connection open for multiple requests
+      3. Process requests independently on each connection
+      4. Return appropriate responses for all requests
+
+      ### Notes
+      - Each connection should be handled independently
+      - The server should maintain the state of each connection separately
+      - Requests on different connections can be processed concurrently
+
+    marketing_md: |-
+      In this stage, you'll add support for handling multiple concurrent persistent connections.
+
+  - slug: "pe3"
+    name: "Connection closure"
+    difficulty: medium
+    description_md: |-
+      In this stage, you'll add support for explicit connection closure using the `Connection: close` header.
+
+      ### Tests
+
+      The tester will execute your program like this:
+      ```bash
+      $ ./your_program.sh
+      ```
+
+      The tester will send two requests:
+      1. A regular request that should keep the connection open
+      2. A request with `Connection: close` header that should close the connection
+
+      ```bash
+      $ curl --http1.1 -v http://localhost:4221/echo/orange --next http://localhost:4221/ -H "Connection: close"
+      ```
+
+      Your server must:
+      1. Keep the connection open after the first request
+      2. Close the connection after the second request when `Connection: close` is present
+      3. Include the `Connection: close` header in the response when closing the connection
+
+      ### Notes
+      - The `Connection: close` header indicates that the connection should be closed after the response
+      - The server should include the same header in its response
+      - After sending the response with `Connection: close`, the server should close the TCP connection
+
+    marketing_md: |-
+      In this stage, you'll add support for explicit connection closure using the Connection header.
