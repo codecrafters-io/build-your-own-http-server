@@ -8,5 +8,5 @@
 
 set -e # Exit on failure
 
-# This compiles the program into $(stack path --local-install-root)/bin/hs-http-server-clone-exe.
+# This compiles the program into $(stack path --local-install-root)/bin/codecrafters-http-server-exe.
 stack build
