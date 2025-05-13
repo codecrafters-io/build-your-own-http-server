@@ -825,8 +825,8 @@ stages:
       Content-Type: text/plain
       Content-Length: 23
 
-      1F 8B 08 00 00 00 00 00  // Hexadecimal representation of the response body
-      00 03 4B 4C 4A 06 00 C2
+      1F 8B 08 00 00 00 00 00  // This is the hexadecimal representation of the body.
+      00 03 4B 4C 4A 06 00 C2  // It should actually be sent as binary data.
       41 24 35 03 00 00 00
       ```
 
