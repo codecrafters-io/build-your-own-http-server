@@ -67,6 +67,7 @@ languages:
   - slug: "cpp"
   - slug: "csharp"
   - slug: "dart"
+  - slug: "clojure"
   - slug: "elixir"
   - slug: "gleam"
   - slug: "go"
