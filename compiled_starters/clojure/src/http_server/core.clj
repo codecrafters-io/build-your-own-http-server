@@ -7,17 +7,24 @@
 
 (def port 4221)
 
+(alter-var-root #'*out* (constantly *err*))
+
 (defn serve []
   (let [server-sock (ServerSocket. port)]
     (.setReuseAddress server-sock true)
     (.accept server-sock)
-    (println "accepted new connection")))
+    (binding [*out* (java.io.PrintWriter. System/out true)]
+     (println "accepted new connection"))))
 
 (defn -main [& args]
   ;; You can use print statements as follows for debugging, they'll be visible when running tests.
-  (binding [*out* *err*]
-    (println "Logs from your program will appear here!"))
+  (println "Logs from your program will appear here!")
+
+
+  (alter-var-root #'*out* (constantly (java.io.PrintWriter. System/out true)))
+
 
   ;; Uncomment this block to pass the first stage
   ;;(serve)
+
   )
