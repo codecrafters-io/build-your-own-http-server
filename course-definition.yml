@@ -64,10 +64,10 @@ concept_slugs: ["network-protocols", "tcp-overview"]
 # The languages that your course supports.
 languages:
   - slug: "c"
+  - slug: "clojure"
   - slug: "cpp"
   - slug: "csharp"
   - slug: "dart"
-  - slug: "clojure"
   - slug: "elixir"
   - slug: "gleam"
   - slug: "go"
