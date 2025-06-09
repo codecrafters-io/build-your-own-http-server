@@ -7,8 +7,6 @@
 
 (def port 4221)
 
-(alter-var-root #'*out* (constantly *err*))
-
 (defn serve []
   (let [server-sock (ServerSocket. port)]
     (.setReuseAddress server-sock true)
@@ -17,10 +15,6 @@
      (println "accepted new connection"))))
 
 (defn -main [& args]
-
-  (alter-var-root #'*out* (constantly (java.io.PrintWriter. System/out true)))
-
-
   (serve)
 
   )

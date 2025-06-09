@@ -7,8 +7,6 @@
 
 (def port 4221)
 
-(alter-var-root #'*out* (constantly *err*))
-
 (defn serve []
   (let [server-sock (ServerSocket. port)]
     (.setReuseAddress server-sock true)
@@ -19,10 +17,6 @@
 (defn -main [& args]
   ;; You can use print statements as follows for debugging, they'll be visible when running tests.
   (println "Logs from your program will appear here!")
-
-
-  (alter-var-root #'*out* (constantly (java.io.PrintWriter. System/out true)))
-
 
   ;; Uncomment this block to pass the first stage
   ;;(serve)
