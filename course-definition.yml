@@ -842,7 +842,7 @@ stages:
 
   - slug: "ag9"
     primary_extension_slug: "http-persistent-connections"
-    name: "Persistent connection"
+    name: "Persistent connections"
     difficulty: medium
     description_md: |-
       In this stage, you'll add support for persistent HTTP connections. By default, HTTP/1.1 connections are persistent, meaning the same TCP connection can be reused for multiple requests.
@@ -874,7 +874,7 @@ stages:
 
   - slug: "ul1"
     primary_extension_slug: "http-persistent-connections"
-    name: "Multiple persistent connections"
+    name: "Concurrent persistent connections"
     difficulty: medium
     description_md: |-
       In this stage, you'll extend your server to handle multiple concurrent persistent connections.
