@@ -8,6 +8,8 @@ $ ./your_program.sh --directory /tmp/
 
 The tester will then send two `GET` requests to the `/files/{filename}` endpoint on your server.
 
+Your response should depend on whether `{filename}` exists in the directory specified by `--directory`.
+
 #### First request
 The first request will ask for a file that exists in the files directory:
 ```
