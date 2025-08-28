@@ -8,4 +8,4 @@ debug: false
 # on Codecrafters.
 #
 # Available versions: dart-3.4
-language_pack: dart-3.4
+buildpack: dart-3.4
