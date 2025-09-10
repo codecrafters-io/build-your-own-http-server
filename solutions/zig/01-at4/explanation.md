@@ -11,7 +11,7 @@ var listener = try address.listen(.{
 defer listener.deinit();
 
 _ = try listener.accept();
-try stdout.print("client connected!", .{});
+std.debug.print("client connected!", .{});
 ```
 
 Push your changes to pass the first stage:
