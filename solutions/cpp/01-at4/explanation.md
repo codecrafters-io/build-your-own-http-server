@@ -1,4 +1,4 @@
-The entry point for your HTTP server implementation is in `src/server.cpp`.
+The entry point for your HTTP server implementation is in `src/main.cpp`.
 
 Study and uncomment the relevant code: 
 
