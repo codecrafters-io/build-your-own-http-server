@@ -8,4 +8,4 @@
 
 set -e # Exit on failure
 
-exec java -jar /tmp/codecrafters-build-http-server-kotlin/build-your-own-http-server.jar "$@"
+exec /tmp/codecrafters-build-http-server-kotlin/distributions/app/bin/app "$@"
