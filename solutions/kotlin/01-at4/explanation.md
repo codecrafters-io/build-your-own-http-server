@@ -1,4 +1,4 @@
-The entry point for your HTTP server implementation is in `src/main/kotlin/Main.kt`.
+The entry point for your HTTP server implementation is in `app/src/main/kotlin/App.kt`.
 
 Study and uncomment the relevant code: 
 

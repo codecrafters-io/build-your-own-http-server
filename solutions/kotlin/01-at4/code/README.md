@@ -17,8 +17,8 @@ and more.
 # Passing the first stage
 
 The entry point for your HTTP server implementation is in
-`src/main/kotlin/Main.kt`. Study and uncomment the relevant code, and push your
-changes to pass the first stage:
+`app/src/main/kotlin/App.kt`. Study and uncomment the relevant code, and push
+your changes to pass the first stage:
 
 ```sh
 git commit -am "pass 1st stage" # any msg
@@ -31,8 +31,8 @@ Time to move on to the next stage!
 
 Note: This section is for stages 2 and beyond.
 
-1. Ensure you have `kotlin (>=2.0)` installed locally
+1. Ensure you have `gradle (9.1.0)` installed locally
 1. Run `./your_program.sh` to run your program, which is implemented in
-   `src/main/kotlin/Main.kt`.
+   `app/src/main/kotlin/App.kt`.
 1. Commit your changes and run `git push origin master` to submit your solution
    to CodeCrafters. Test output will be streamed to your terminal.
