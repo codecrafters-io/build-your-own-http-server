@@ -150,6 +150,8 @@ stages:
         "go-tcp-server",
         "rust-tcp-server",
         "python-tcp-server",
+        "java-tcp-server",
+        "cpp-tcp-server",
       ]
     # The name of the stage. This is shown in the course catalog, and on other
     # course pages.
@@ -181,6 +183,8 @@ stages:
         "go-tcp-server",
         "rust-tcp-server",
         "python-tcp-server",
+        "java-tcp-server",
+        "cpp-tcp-server",
       ]
     name: "Respond with 200"
     difficulty: very_easy
@@ -213,6 +217,8 @@ stages:
         "go-tcp-server",
         "rust-tcp-server",
         "python-tcp-server",
+        "java-tcp-server",
+        "cpp-tcp-server",
       ]
     name: "Concurrent connections"
     difficulty: easy
