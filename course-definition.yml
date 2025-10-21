@@ -192,6 +192,16 @@ stages:
       In this stage, you'll extend your TCP server to respond to a HTTP request with a 200 response.
 
   - slug: "ih0"
+    concept_slugs:
+      [
+        "network-protocols",
+        "tcp-overview",
+        "go-tcp-server",
+        "rust-tcp-server",
+        "python-tcp-server",
+        "java-tcp-server",
+        "cpp-tcp-server",
+      ]
     name: "Extract URL path"
     difficulty: easy
     marketing_md: |-
