@@ -9,7 +9,7 @@
 +  });
 +});
 
--// Uncomment the code below to pass the first stage the first stage
+-// Uncomment this to pass the first stage
 -// const server = net.createServer((socket) => {
 -//   socket.on("close", () => {
 -//     socket.end();
