@@ -19,7 +19,7 @@
 +    let host = "127.0.0.1"
 +        port = "4221"
 
--    -- Uncomment this block to pass first stage
+-    -- Uncomment the code below to pass the first stage first stage
 -    -- let host = "127.0.0.1"
 -    --     port = "4221"
 -    --
