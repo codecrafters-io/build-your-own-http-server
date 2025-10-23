@@ -16,7 +16,7 @@ main = do
     -- You can use print statements as follows for debugging, they'll be visible when running tests.
     BC.putStrLn "Logs from your program will appear here"
 
-    -- Uncomment this block to pass first stage
+    -- TODO: Uncomment the code below to pass first stage
     -- let host = "127.0.0.1"
     --     port = "4221"
     --
