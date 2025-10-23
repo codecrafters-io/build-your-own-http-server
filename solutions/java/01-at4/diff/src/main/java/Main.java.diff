@@ -10,7 +10,7 @@
 +    try {
 +      ServerSocket serverSocket = new ServerSocket(4221);
 
--    // Uncomment this block to pass the first stage
+-    // Uncomment the code below to pass the first stage the first stage
 -    //
 -    // try {
 -    //   ServerSocket serverSocket = new ServerSocket(4221);
