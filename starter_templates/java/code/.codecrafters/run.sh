@@ -8,4 +8,4 @@
 
 set -e # Exit on failure
 
-exec java -jar /tmp/codecrafters-build-http-server-java/codecrafters-http-server.jar "$@"
+exec java --enable-preview -jar /tmp/codecrafters-build-http-server-java/codecrafters-http-server.jar "$@"
