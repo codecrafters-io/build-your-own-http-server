@@ -1,5 +1,9 @@
-# You can use print statements as follows for debugging, they'll be visible when running tests.
-$stderr.puts "Logs from your program will appear here!"
+require "socket"
 
-# Uncomment this block to pass the first stage
-# puts "Implement code here!"
+# You can use print statements as follows for debugging, they'll be visible when running tests.
+print("Logs from your program will appear here!")
+
+# TODO: Uncomment the code below to pass the first stage
+#
+# server = TCPServer.new("localhost", 4221)
+# client_socket, client_address = server.accept
