@@ -8,4 +8,4 @@
 
 set -e # Exit on failure
 
-exec java -jar ./target/scala-3.7.4/http-server.jar "$@"
+exec java -jar "$(dirname "$0")/target/scala-3.7.4/http-server.jar" "$@"
