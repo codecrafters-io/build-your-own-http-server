@@ -79,6 +79,7 @@ languages:
   - slug: "python"
   - slug: "ruby"
   - slug: "rust"
+  - slug: "scala"
   - slug: "typescript"
   - slug: "zig"
 
