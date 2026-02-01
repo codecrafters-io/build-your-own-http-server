@@ -9,7 +9,7 @@ defmodule App.MixProject do
       elixir: "~> 1.18",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
-      escript: [main_module: CLI]
+      escript: [main_module: Server]
     ]
   end
 
@@ -17,7 +17,6 @@ defmodule App.MixProject do
   def application do
     [
       extra_applications: [:logger],
-      mod: {Server, []}
     ]
   end
 
