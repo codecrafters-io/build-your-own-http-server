@@ -75,6 +75,7 @@ languages:
   - slug: "java"
   - slug: "javascript"
   - slug: "kotlin"
+  - slug: "odin"
   - slug: "ocaml"
   - slug: "php"
   - slug: "python"

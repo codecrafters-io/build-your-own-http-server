@@ -1,0 +1,35 @@
+package main
+
+import "core:fmt"
+import "core:sys/posix"
+
+main :: proc() {
+	sock := posix.socket(posix.AF.INET, posix.Sock.STREAM)
+	if sock < 0 {
+		fmt.println("Failed to create server socket")
+		return
+	}
+
+	// Since the tester restarts your program quite often, setting SO_REUSEADDR
+	// ensures that we don't run into 'Address already in use' errors
+	reuse: i32 = 1
+	posix.setsockopt(sock,
+		i32(posix.SOL_SOCKET),
+		posix.Sock_Option.REUSEADDR,
+		&reuse,
+		posix.socklen_t(size_of(reuse)),
+	)
+
+	addr := posix.sockaddr_in{
+		sin_family = posix.sa_family_t.INET,
+		sin_port   = u16be(4221),
+		sin_addr   = {}, // INADDR_ANY
+	}
+	posix.bind(sock, cast(^posix.sockaddr)(&addr), posix.socklen_t(size_of(addr)))
+	posix.listen(sock, 8)
+	fmt.println("Listening on port 4221...")
+
+	client_addr: posix.sockaddr_storage
+	client_addr_len := posix.socklen_t(size_of(posix.sockaddr_storage))
+	posix.accept(sock, cast(^posix.sockaddr)(&client_addr), &client_addr_len)
+}
