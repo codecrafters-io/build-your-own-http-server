@@ -1,22 +1,39 @@
 package main
 
 import "core:fmt"
-import "core:net"
+import "core:sys/posix"
 
 main :: proc() {
-    // You can use print statements as follows for debugging, they'll be visible when running tests.
-    fmt.eprintln("Logs from your program will appear here!")
+	sock := posix.socket(posix.AF.INET, posix.Sock.STREAM)
+	if sock < 0 {
+		fmt.println("Failed to create server socket")
+		return
+	}
 
-    // Uncomment the code below to pass the first stage
-    // listen_socket, listen_err := net.listen_tcp(net.Endpoint{
-    //    port = 4221,
-    //    address = net.IP4_Loopback
-    // })
-    // if listen_err != nil {
-    //     fmt.panicf("%s", listen_err)
-    // }
-    // client_socket, client_endpoint, accept_err := net.accept_tcp(listen_socket)
-    // if accept_err != nil {
-    //     fmt.panicf("%s", accept_err)
-    // }
+	// Since the tester restarts your program quite often, setting SO_REUSEADDR
+	// ensures that we don't run into 'Address already in use' errors
+	reuse: i32 = 1
+	posix.setsockopt(sock,
+		i32(posix.SOL_SOCKET),
+		posix.Sock_Option.REUSEADDR,
+		&reuse,
+		posix.socklen_t(size_of(reuse)),
+	)
+
+	addr := posix.sockaddr_in{
+		sin_family = posix.sa_family_t.INET,
+		sin_port   = u16be(4221),
+		sin_addr   = {}, // INADDR_ANY
+	}
+	posix.bind(sock, cast(^posix.sockaddr)(&addr), posix.socklen_t(size_of(addr)))
+	posix.listen(sock, 8)
+	fmt.println("Listening on port 4221...")
+
+	// You can use print statements as follows for debugging, they'll be visible when running tests.
+	fmt.eprintln("Logs from your program will appear here!")
+
+	// TODO: Uncomment the code below to pass the first stage
+	// client_addr: posix.sockaddr_storage
+	// client_addr_len := posix.socklen_t(size_of(posix.sockaddr_storage))
+	// posix.accept(sock, cast(^posix.sockaddr)(&client_addr), &client_addr_len)
 }
