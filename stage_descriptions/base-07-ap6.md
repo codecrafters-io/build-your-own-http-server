@@ -8,9 +8,9 @@ The tester will execute your program with a `--directory` flag. Your program sho
 $ ./your_program.sh --directory /tmp/
 ```
 
-The tester will then send two `GET` requests to the `/files/{filename}` endpoint. Each request corresponds to the file path `/{directory}/{filename}`.
+The tester will then send two `GET` requests to the `/files/{filename}` endpoint. Each request corresponds to the file path `{directory}/{filename}`.
 
-Your response should depend on whether the file at `/{directory}/{filename}` exists or not.
+Your response should depend on whether the file at `{directory}/{filename}` exists or not.
 
 #### First request
 The first request will ask for a file that exists in the files directory:
