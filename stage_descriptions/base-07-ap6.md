@@ -1,14 +1,16 @@
 In this stage, you'll implement the `/files/{filename}` endpoint, which returns a requested file to the client.
 
 ### Tests
-The tester will execute your program with a `--directory` flag. The `--directory` flag specifies the directory where the files are stored, as an absolute path.
+
+The tester will execute your program with a `--directory` flag. Your program should read this flag from the command-line arguments, and treat the specified directory as the root directory for all file requests.
+
 ```
 $ ./your_program.sh --directory /tmp/
 ```
 
-The tester will then send two `GET` requests to the `/files/{filename}` endpoint on your server.
+The tester will then send two `GET` requests to the `/files/{filename}` endpoint. Each request corresponds to the file path `{directory}/{filename}`.
 
-Your response should depend on whether `{filename}` exists in the directory specified by `--directory`.
+Your response should depend on whether the file at `{directory}/{filename}` exists or not.
 
 #### First request
 The first request will ask for a file that exists in the files directory:
