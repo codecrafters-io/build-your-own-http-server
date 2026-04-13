@@ -8,4 +8,8 @@
 
 set -e # Exit on failure
 
-exec /tmp/codecrafters-build-http-server-kotlin/distributions/app/bin/app "$@"
+LIBS_DIR="/tmp/codecrafters-libs-http-server-kotlin"
+BUILD_DIR="/tmp/codecrafters-build-http-server-kotlin"
+KOTLIN_MAIN="$BUILD_DIR/classes/kotlin/main"
+
+exec java -cp "$KOTLIN_MAIN:$LIBS_DIR/*" AppKt "$@"
