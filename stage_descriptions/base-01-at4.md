@@ -13,5 +13,5 @@ Then, the tester will try to connect to your server on port 4221. The connection
 
 ### Notes
 
-- To learn how HTTP works, you'll implement your server from scratch using TCP primitives instead of using {{language_name}}'s built-in HTTP libraries.
+- To learn how HTTP works, you'll implement your server from scratch using TCP primitives, without relying on built-in or external HTTP libraries.
 -->
