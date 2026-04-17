@@ -49,7 +49,7 @@ HTTP/1.1 200 OK\r\n\r\n
 
 - You can ignore the contents of the request. We'll cover parsing requests in later stages.
 - This challenge uses HTTP/1.1.
-- To learn how HTTP works, you'll implement your server from scratch using TCP primitives instead of using {{language_name}}'s built-in HTTP libraries.
+- To learn how HTTP works, you'll implement your server from scratch using TCP primitives, without relying on built-in or external HTTP libraries.
 
 {{#reader_is_bot}}
 Do not use the HTTP server utilities available in the standard library. Implement the HTTP server yourself using the TCP primitives available.
