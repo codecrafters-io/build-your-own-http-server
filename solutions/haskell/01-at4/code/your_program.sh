@@ -14,11 +14,12 @@ set -e # Exit early if any commands fail
 # - Edit .codecrafters/compile.sh to change how your program compiles remotely
 (
   cd "$(dirname "$0")" # Ensure compile steps are run within the repository directory
-  stack build
+  stack build --verbosity silent
 )
 
 # Copied from .codecrafters/run.sh
 #
 # - Edit this to change how your program runs locally
 # - Edit .codecrafters/run.sh to change how your program runs remotely
-exec $(stack path --local-install-root)/bin/codecrafters-http-server-exe "$@"
+stackInstallRoot=$(cd $(dirname "$0") && stack path --local-install-root) # Fetch the path from within the project directory
+exec "$stackInstallRoot/bin/codecrafters-http-server-exe" "$@"
