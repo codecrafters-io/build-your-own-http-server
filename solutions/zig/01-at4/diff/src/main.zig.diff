@@ -1,25 +1,27 @@
-@@ -1,17 +1,13 @@
+@@ -1,19 +1,14 @@
  const std = @import("std");
- const net = std.net;
 
- pub fn main() !void {
+ pub fn main(init: std.process.Init) !void {
+     const io = init.io;
+
 -    // You can use print statements as follows for debugging, they'll be visible when running tests.
--    std.debug.print("Logs from your program will appear here!\n", .{});
-+    const address = try net.Address.resolveIp("127.0.0.1", 4221);
-+    var listener = try address.listen(.{
+-    try std.Io.File.writeStreamingAll(std.Io.File.stderr(), io, "Logs from your program will appear here!\n");
++    const address = try std.Io.net.IpAddress.parseIp4("127.0.0.1", 4221);
++    var server = try address.listen(io, .{
 +        .reuse_address = true,
 +    });
-+    defer listener.deinit();
++    defer server.deinit(io);
 
 -    // TODO: Uncomment the code below to pass the first stage
--    // const address = try net.Address.resolveIp("127.0.0.1", 4221);
--    // var listener = try address.listen(.{
+-    //
+-    // const address = try std.Io.net.IpAddress.parseIp4("127.0.0.1", 4221);
+-    // var server = try address.listen(io, .{
 -    //     .reuse_address = true,
 -    // });
--    // defer listener.deinit();
+-    // defer server.deinit(io);
 -    //
--    // _ = try listener.accept();
+-    // _ = try server.accept(io);
 -    // std.debug.print("client connected!", .{});
-+    _ = try listener.accept();
++    _ = try server.accept(io);
 +    std.debug.print("client connected!", .{});
  }
