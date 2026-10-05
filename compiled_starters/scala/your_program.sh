@@ -15,7 +15,8 @@ set -e # Exit early if any commands fail
 (
   cd "$(dirname "$0")" # Ensure compile steps are run within the repository directory
   scala-cli package src/main/scala/ \
-    -q --power --assembly --force --server=false --scala-version=3.8.3 \
+    -q --power --assembly --force --server=false --scala-version=3.9.0 \
+    --main-class codecrafters_http_server.Main \
     -o /tmp/codecrafters-build-http-server-scala
 )
 
