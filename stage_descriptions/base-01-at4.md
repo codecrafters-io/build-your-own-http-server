@@ -1,6 +1,13 @@
-HTTP servers communicate over TCP, the protocol that powers most web traffic. In this stage, you’ll implement a TCP server that listens on port 4221, just like a real HTTP server.
+HTTP/1.1 requests arrive over TCP connections, so the server first needs a way
+for clients to reach it. In this stage, you'll listen for TCP connections on
+port `4221`.
 
-<!--
+### TCP connections
+
+A TCP connection carries an ordered stream of bytes between two programs. A
+listening socket accepts new connections on a chosen port. You don't need to
+read requests or send HTTP responses yet.
+
 ### Tests
 
 The tester will execute your program like this:
@@ -9,9 +16,10 @@ The tester will execute your program like this:
 $ ./your_program.sh
 ```
 
-Then, the tester will try to connect to your server on port 4221. The connection must succeed for you to pass this stage.
+Keep your program running so the tester can connect to port `4221`. A successful
+TCP connection completes this stage.
 
 ### Notes
 
-- To learn how HTTP works, you'll implement your server from scratch using TCP primitives, without relying on built-in or external HTTP libraries.
--->
+- To learn how HTTP works, you'll implement your server from scratch using TCP
+  primitives, without relying on built-in or external HTTP libraries.
