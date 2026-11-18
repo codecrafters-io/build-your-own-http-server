@@ -36,9 +36,11 @@ release_status: "live"
 # >
 # > Along the way, you'll learn about TCP servers, the Redis Protocol and more.
 description_md: |-
-  HTTP is the protocol that powers the web. In this challenge, you'll build a HTTP server from scratch using TCP primitives. Your server will be capable of handling simple GET/POST requests, serving files and handling multiple concurrent connections.
+  How does a server turn a stream of TCP bytes into separate HTTP requests?
 
-  Along the way, we'll learn about TCP connections, HTTP headers, HTTP verbs, handling multiple connections and more.
+  HTTP/1.1 uses line endings and body lengths to give those bytes structure. You'll build a server using TCP sockets directly, with GET and POST endpoints that return text, serve files, and save uploaded data. Extensions add gzip compression and let clients reuse connections for multiple requests.
+
+  You'll practice parsing a wire protocol, counting encoded bytes, negotiating compression, and handling concurrent clients without mixing up their requests.
 
 # This is shown on the catalog. Plaintext only, recommended length ~10 words.
 #

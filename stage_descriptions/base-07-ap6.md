@@ -1,43 +1,65 @@
-In this stage, you'll implement the `/files/{filename}` endpoint, which returns a requested file to the client.
+Your server can return text in a response body. In this stage, you'll add
+`GET /files/{filename}` to return bytes read from a file.
+
+### Serving file bytes
+
+The `--directory` argument selects the directory your server serves.
+
+Use `application/octet-stream` as the response's content type. This labels the
+body as arbitrary binary data. Preserve the file's bytes exactly, and use their
+count for `Content-Length`.
 
 ### Tests
 
-The tester will execute your program with a `--directory` flag. Your program should read this flag from the command-line arguments, and treat the specified directory as the root directory for all file requests.
+The tester will execute your program with a `--directory` flag. Your program
+should read this flag from the command-line arguments, and treat the specified
+directory as the root directory for all file requests.
 
 ```
 $ ./your_program.sh --directory /tmp/
 ```
 
-The tester will then send two `GET` requests to the `/files/{filename}` endpoint. Each request corresponds to the file path `{directory}/{filename}`.
+The tester will then send two `GET` requests to the `/files/{filename}`
+endpoint. Each request corresponds to the file path `{directory}/{filename}`.
 
-Your response should depend on whether the file at `{directory}/{filename}` exists or not.
+Your response should depend on whether the file at `{directory}/{filename}`
+exists or not.
 
-#### First request
+**First request**
+
 The first request will ask for a file that exists in the files directory:
+
 ```
 $ echo -n 'Hello, World!' > /tmp/foo
 $ curl -i http://localhost:4221/files/foo
 ```
 
-Your server must respond with a `200` response that contains the following parts:
+Your server must respond with a `200` response that contains the following
+parts:
+
 - `Content-Type` header set to `application/octet-stream`.
 - `Content-Length` header set to the size of the file, in bytes.
 - Response body set to the file contents.
+
 ```
 HTTP/1.1 200 OK\r\nContent-Type: application/octet-stream\r\nContent-Length: 13\r\n\r\nHello, World!
 ```
 
-#### Second request
-The second request will ask for a file that doesn't exist in the files directory:
+**Second request**
+
+The second request will ask for a file that doesn't exist in the files
+directory:
+
 ```
 $ curl -i http://localhost:4221/files/non_existant_file
 ```
 
 Your server must respond with a `404` response:
+
 ```
 HTTP/1.1 404 Not Found\r\n\r\n
 ```
 
-{{#reader_is_bot}}
-Do not use the HTTP server utilities available in the standard library. Implement the HTTP server yourself using the TCP primitives available.
-{{/reader_is_bot}}
+{{#reader_is_bot}} Do not use the HTTP server utilities available in the
+standard library. Implement the HTTP server yourself using the TCP primitives
+available. {{/reader_is_bot}}
